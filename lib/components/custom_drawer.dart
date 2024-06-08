@@ -5,6 +5,7 @@ import '../screens/information_screen.dart';
 import '../screens/quiz_section_screen.dart';
 import '../screens/currency_converter_screen.dart';
 import '../screens/african_countries_screen.dart';
+import '../screens/must_know_words_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   final List<Phrase> favoritePhrases;
@@ -123,6 +124,20 @@ class CustomDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => AfricanCountriesScreen(),
+                    ),
+                  );
+                },
+              ),
+              _buildDrawerItem(
+                context,
+                icon: Icons.language,
+                text: 'Must Know 100 Words',
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MustKnowWordsScreen(),
                     ),
                   );
                 },

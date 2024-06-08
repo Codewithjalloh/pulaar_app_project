@@ -9,6 +9,10 @@ class Country {
   final String currency;
   final String language;
   final String flag;
+  final String region;
+  final String subregion;
+  final List<String> borders;
+  final String nativeName;
 
   Country({
     required this.name,
@@ -18,6 +22,10 @@ class Country {
     required this.currency,
     required this.language,
     required this.flag,
+    required this.region,
+    required this.subregion,
+    required this.borders,
+    required this.nativeName,
   });
 
   factory Country.fromJson(Map<String, dynamic> json) {
@@ -34,6 +42,12 @@ class Country {
           ? (json['languages'] as Map<String, dynamic>).values.first
           : 'N/A',
       flag: json['flags']['png'],
+      region: json['region'],
+      subregion: json['subregion'],
+      borders: List<String>.from(json['borders'] ?? []),
+      nativeName: json['name']['nativeName'] != null
+          ? json['name']['nativeName'].values.first['common']
+          : 'N/A',
     );
   }
 }

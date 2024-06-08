@@ -14,8 +14,7 @@ class CountryDetailScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             Center(
               child: Image.network(country.flag, height: 100),
@@ -27,7 +26,22 @@ class CountryDetailScreen extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
+              'Native Name: ${country.nativeName}',
+              style: TextStyle(fontSize: 20),
+            ),
+            SizedBox(height: 10),
+            Text(
               'Capital: ${country.capital}',
+              style: TextStyle(fontSize: 20),
+            ),
+            SizedBox(height: 10),
+            Text(
+              'Region: ${country.region}',
+              style: TextStyle(fontSize: 20),
+            ),
+            SizedBox(height: 10),
+            Text(
+              'Subregion: ${country.subregion}',
               style: TextStyle(fontSize: 20),
             ),
             SizedBox(height: 10),
@@ -48,6 +62,11 @@ class CountryDetailScreen extends StatelessWidget {
             SizedBox(height: 10),
             Text(
               'Language: ${country.language}',
+              style: TextStyle(fontSize: 20),
+            ),
+            SizedBox(height: 10),
+            Text(
+              'Borders: ${country.borders.join(', ')}',
               style: TextStyle(fontSize: 20),
             ),
           ],

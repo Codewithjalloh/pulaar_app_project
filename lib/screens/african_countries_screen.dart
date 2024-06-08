@@ -39,6 +39,14 @@ class _AfricanCountriesScreenState extends State<AfricanCountriesScreen> {
               itemBuilder: (context, index) {
                 final country = countries[index];
                 return ListTile(
+                  leading: Image.network(
+                    country.flag,
+                    width: 50,
+                    height: 50,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Icon(Icons.flag, size: 50);
+                    },
+                  ),
                   title: Text(country.name),
                   subtitle: Text('Capital: ${country.capital}'),
                   onTap: () {

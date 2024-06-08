@@ -1,0 +1,59 @@
+{
+  "basic_words": [
+    {
+      "english": "Hello",
+      "french": "Bonjour",
+      "french_pronunciation": "bohn-zhoor",
+      "chinese": "你好 (Nǐ hǎo)",
+      "chinese_pronunciation": "nee how",
+      "dutch": "Hallo",
+      "dutch_pronunciation": "hah-loh",
+      "russian": "Здравствуйте (Zdravstvuyte)",
+      "russian_pronunciation": "zdrah-stvooy-teh",
+      "arabic": "مرحبا (Marhaban)",
+      "arabic_pronunciation": "mar-ha-ban"
+    },
+    {
+      "english": "Thank you",
+      "french": "Merci",
+      "french_pronunciation": "mehr-see",
+      "chinese": "谢谢 (Xièxiè)",
+      "chinese_pronunciation": "shieh shieh",
+      "dutch": "Dank je",
+      "dutch_pronunciation": "dahnk yuh",
+      "russian": "Спасибо (Spasibo)",
+      "russian_pronunciation": "spah-see-boh",
+      "arabic": "شكرا (Shukran)",
+      "arabic_pronunciation": "shoo-krahn"
+    }
+  ],
+  "numbers": [
+    {
+      "english": "One",
+      "french": "Un",
+      "french_pronunciation": "uh",
+      "chinese": "一 (Yī)",
+      "chinese_pronunciation": "yee",
+      "dutch": "Een",
+      "dutch_pronunciation": "ayn",
+      "russian": "Один (Odin)",
+      "russian_pronunciation": "ah-deen",
+      "arabic": "واحد (Wahid)",
+      "arabic_pronunciation": "wah-hid"
+    },
+    {
+      "english": "Two",
+      "french": "Deux",
+      "french_pronunciation": "duh",
+      "chinese": "二 (Èr)",
+      "chinese_pronunciation": "ar",
+      "dutch": "Twee",
+      "dutch_pronunciation": "tvay",
+      "russian": "Два (Dva)",
+      "russian_pronunciation": "dvah",
+      "arabic": "اثنان (Ithnan)",
+      "arabic_pronunciation": "ith-nan"
+    }
+  ]
+
+}
