@@ -4,6 +4,7 @@ import '../screens/fulani_history_screen.dart';
 import '../screens/information_screen.dart';
 import '../screens/quiz_section_screen.dart';
 import '../screens/currency_converter_screen.dart';
+import '../screens/african_countries_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   final List<Phrase> favoritePhrases;
@@ -16,7 +17,6 @@ class CustomDrawer extends StatelessWidget {
       child: OrientationBuilder(
         builder: (context, orientation) {
           final isPortrait = orientation == Orientation.portrait;
-          final width = MediaQuery.of(context).size.width;
 
           return ListView(
             children: [
@@ -109,6 +109,20 @@ class CustomDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => CurrencyConverterScreen(),
+                    ),
+                  );
+                },
+              ),
+              _buildDrawerItem(
+                context,
+                icon: Icons.public,
+                text: 'African Countries',
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AfricanCountriesScreen(),
                     ),
                   );
                 },

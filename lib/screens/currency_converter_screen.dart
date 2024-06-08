@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:intl/intl.dart';
 import '../components/currencies.dart';
 
 class CurrencyConverterScreen extends StatefulWidget {
@@ -52,6 +53,11 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
     setState(() {
       _convertedAmount = amount * _exchangeRate;
     });
+  }
+
+  String _formatCurrency(double amount) {
+    final formatter = NumberFormat("#,##0.00", "en_US");
+    return formatter.format(amount);
   }
 
   @override
@@ -123,8 +129,9 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
               CircularProgressIndicator()
             else
               Text(
-                'Converted Amount: $_convertedAmount $_toCurrency',
+                'Converted Amount: ${_formatCurrency(_convertedAmount)} $_toCurrency',
                 style: TextStyle(fontSize: 24),
+                textAlign: TextAlign.center,
               ),
           ],
         ),

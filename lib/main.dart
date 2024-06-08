@@ -4,6 +4,7 @@ import 'package:pulaar/screens/fulani_history_screen.dart';
 import 'package:pulaar/screens/information_screen.dart';
 import 'package:pulaar/screens/quiz_section_screen.dart';
 import 'package:pulaar/screens/currency_converter_screen.dart';
+import 'package:pulaar/screens/african_countries_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/information': (context) => InformationScreen(),
         '/quiz_section': (context) => QuizSectionScreen(),
         '/currency_converter': (context) => CurrencyConverterScreen(),
+        '/african_countries': (context) => AfricanCountriesScreen(),
       },
     );
   }
