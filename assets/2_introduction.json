@@ -1,0 +1,296 @@
+[
+  {
+    "pulaar": "Jannoowoo, jannoobe","english": "teachers"
+  },
+  {
+    "pulaar": "Janngoowo,janngoobe","english": "students"
+  },
+  {
+    "pulaar": "Lekkoljo, lekkolbe","english":"students, school"
+  },
+  {
+    "pulaar": "Dofturjo, dofturbe","english": "doctors"
+  },
+  {
+    "pulaar": "Nawndoowo, nawndoobe","english": "healers, doctor"
+  },
+  {
+    "pulaar": "Lando, lambe","english": "chief(s)"
+  },
+  {
+    "pulaar": "Defoowo, defoobe","english": "cooks(s)"
+  },
+  {
+    "pulaar": "Remoowo, remoobe","english":"farmer(s)"
+  },
+  {
+    "pulaar": "Baylo, waylube","english": "blacksmith(s)"
+  },
+  {
+    "pulaar": "Almaamiijo, almaamiibe","english": "imam(s)"
+  },
+  {
+    "pulaar": "Yeeyoowoo, yeeyoobe","english":"seller(s)"
+  },
+  {
+    "pulaar": "Njulaajo, njulaabe","english":"merchant(s)"
+  },
+  {
+    "pulaar": "No’oowo, no’oobe","english":"tailor(s)"
+  },
+  {
+    "pulaar": "Garankeejo, garankeebe","english": "leatherworker(s)"
+  },
+  {
+    "pulaar": "Namakalaajo, namakalaabe","english": "praise singer(s) (griot)"
+  },
+  {
+    "pulaar": "Golloowo, golloobe","english": "worker(s)"
+  },
+  {
+    "pulaar": "Feetudo, feetube","english":"crazy person(s)"
+  },
+  {
+    "pulaar": "Waanoowo, waanoobe","english": "hunter(s)"
+  },
+  {
+    "pulaar": "Karamokoojo, karamokoobe","english": "marabout, teacher(s)"
+  },
+  {
+    "pulaar": "Ngaynaako, ngaynaabe","english": "herdsman, herdsmen"
+  },
+  {
+    "pulaar": "Wolonteerjo, wolonteerbe","english": "volonteer(s)"
+  },
+  {
+    "pulaar": "Tutoowo ledde, tutoobe ledde","english": "tree-planter(s)"
+  },
+  {
+    "pulaar": "Wolonteerjo cellal, wolonteerbe cellal","english": "health volunteer(s)"
+  },
+  {
+    "pulaar": "Yimoowo, yimoobe","english": "singer(s)"
+  },
+  {
+    "pulaar": "Fijoowo, fijoobe","english":"actor, player(s)"
+  },
+  {
+    "pulaar": "Dogoowo,  dogoobe","english": "runner, athlete(s)"
+  },
+  {
+    "pulaar": "Meniisiyeejo, meniisiyeebe","english": "carpenter(s)"
+  },
+  {
+    "pulaar": "Poliisiijo, poliisiibe","english": "policeman, policemen"
+  },
+  {
+    "pulaar": "Pullo, Fulbe","english": "peuhl(s)"
+  },
+  {
+    "pulaar": "Maninkaajo, maninkaabe","english": "malinke(s)"
+  },
+  {
+    "pulaar": "Sosoojo, sosoobe","english": "soussou(s)"
+  },
+  {
+    "pulaar": "Forestieejo, forestieebe","english": "forestier(s)"
+  },
+  {
+    "pulaar": "Portoojo, portoobe","english":"white man (white men)"
+  },
+  {
+    "pulaar": "Baleejo, baleebe","english": "black man (black men)"
+  },
+  {
+    "pulaar": "Gine’enjo, gine’enbe","english": "guinean(s)"
+  },
+  {
+    "pulaar": "Amerikeenjo, amerikeenbe","english": "American(s)"
+  },
+  {
+    "pulaar": "Faranseejo, faranseebe","english": "French(s)"
+  },
+  {
+    "pulaar": "Senegaleelo, Senegaleebe","english": "Senegalese(s)"
+  },
+  {
+    "pulaar": "Gorko, worbe","english": "man (men)"
+  },
+  {
+    "pulaar": "Debbo, rewbe","english": "woman (women)"
+  },
+  {
+    "pulaar": "Paykun, paykoy","english": "child (children)"
+  },
+  {
+    "pulaar": "Suka, sukaabe","english": "young person(s)"
+  },
+  {
+    "pulaar": "Jiwo, jiwbo","english": "girl (girls)"
+  },
+  {
+    "pulaar": "Mawdo, mawbe","english": "old person(s)"
+  },
+  {
+    "pulaar": "Boboo, booboobe","english": "baby (babies)"
+  },
+  {
+    "pulaar": "An, ko a jannoowo?","english": "you, are a teacher?"
+  },
+  {
+    "pulaar": "Hi-hi, ko mi jannoowo matematik","english": "yes I teach mathematics"
+  },
+  {
+    "pulaar": "Hanko, ko o Amerikenjo","english": "him, is he an American?"
+  },
+  {
+    "pulaar": "O’o, wonaa o amerikenjo","english": "No, he is not American"
+  },
+  {
+    "pulaar": "Ko o faranseejo","english": "he is French"
+  },
+  {
+    "pulaar": "Ko honno innetedaa?","english": "what is your name"
+  },
+  {
+    "pulaar": "Ko honno wi’etedaa","english": "what is your name"
+  },
+  {
+    "pulaar": "Ko honno yettetedaa?","english": "what is your last name"
+  },
+  {
+    "pulaar": "Innde maa?","english": "your name?"
+  },
+  {
+    "pulaar": "Yettoore maa?","english": "your last name"
+  },
+  {
+    "pulaar": "Ko Honto iwudaa?","english": "where do you come from"
+  },
+  {
+    "pulaar": "Ko amerik mi iwi","english": "that’s from America I originally"
+  },
+  {
+    "pulaar": "Ko mo a honto","english": "where are you from?"
+  },
+  {
+    "pulaar": "Ko mo mi Dakar","english": "I’m from Dakar"
+  },
+  {
+    "pulaar": "Ko hondun gollataa?","english": "What do you do (work)?"
+  },
+  {
+    "pulaar": "Wonaa jannoowo","english": "I am not a teacher"
+  },
+  {
+    "pulaar": "Ko honto hodudaa?","english": "where do you live?"
+  },
+  {
+    "pulaar": "Ko maamu mi hodi","english": "I live in Mamou"
+  },
+  {
+    "pulaar": "An le?","english": "and you?"
+  },
+  {
+    "pulaar": "Kadi","english": "also"
+  },
+  {
+    "pulaar": "Tigi tiki","english": "truly, specifically"
+  },
+  {
+    "pulaar": "A jommbii?","english": "Are you married? (Question to a man)"
+  },
+  {
+    "pulaar": "A jommbaama?","english": "Are you married? (Question to a woman)"
+  },
+  {
+    "pulaar": "Mi jommbaali","english": "I am not married (man)"
+  },
+  {
+    "pulaar": "Mi jommbaaka","english": "I am not married (woman)"
+  },
+  {
+    "pulaar": "Mi jommbii","english": "I am married (man)"
+  },
+  {
+    "pulaar": "Mi jommbaama","english": "I am married (woman)"
+  },
+  {
+    "pulaar": "Min, Ko mi jannoowo","english": "Me, I am a teacher"
+  },
+  {
+    "pulaar": "An, ko a janngoowo","english": "You, you are a student."
+  },
+  {
+    "pulaar": "Enen, ko en rewbe","english":"We (all of us) are women"
+  },
+  {
+    "pulaar": "Menen, ko men rube","english":"we are women (not you)"
+  },
+  {
+    "pulaar": "Mi, min","english":"I"
+  },
+  {
+    "pulaar": "A, an","english":"you (sing.)"
+  },
+  {
+    "pulaar": "O, kanko","english":"he, she"
+  },
+  {
+    "pulaar": "Men, menen","english":"we (excluding the listener)"
+  },
+  {
+    "pulaar":  "En, even","english":"we (including the listener)"
+  },
+  {
+    "pulaar": "On, onon","english":"you (pl.)"
+  },
+  {
+    "pulaar": "Be, kambe","english":"they"
+  },
+  {
+    "pulaar": "Mido faalaa jommbude maa","english": "I want to marry you"
+  },
+  {
+    "pulaar": "Awa, mi salataako","english": "Ok, that’s fine."
+  },
+  {
+    "pulaar": "Ko honto tenje an woni","english": "where is my dowry?"
+  },
+  {
+    "pulaar":  "Dun no find","english":"That’s not adequate"
+  },
+  {
+    "pulaar": "Hida haani okkude mawbe an ben na’i sappo", "english":"You’ll have too give my folks ten cows."
+  },
+  {
+    "pulaar": "Mido Mari moodi", "english": "I have a husband"
+  },
+  {
+    "pulaar":  "Mi yettaama", "english": "I’m already taken."
+  },
+  {
+    "pulaar": "Mi anndaa maa","english": "I don’t know you."
+  },
+  {
+    "pulaar": "Mi faalaaka jommbeede","english": "I don’t want to get married"
+  },
+  {
+    "pulaar": "Mi hewtaali jommbeede taco","english": "I’m not old enough to marry"
+  },
+  {
+    "pulaar": "Mi faalaaka maa", "english": "I don’t like you"
+  },
+  {
+    "pulaar": "Hida kaani","english": "You are ugly"
+  },
+  {
+    "pulaar": "Hida fandi","english": "You are small"
+  },
+  {
+    "pulaar": "Ko sagata mi faalaa","english": "I want a young man"
+  },
+  {
+    "pulaar": "Ko mawdo mi faalaa","english":"I want an old man."
+  }
+]

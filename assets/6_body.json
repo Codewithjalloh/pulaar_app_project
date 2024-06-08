@@ -1,0 +1,347 @@
+[
+  {
+    "pulaar":"nawnaare","english": "sickness"
+  },
+  {
+    "pulaar": "nawndoowo","english": "healer, doctor"
+  },
+  {
+    "pulaar":"cellal","english": "health"
+  },
+  {
+    "pulaar":"labutaani","english": "hospital"
+  },
+  {
+    "pulaar": "lekki","english": "medicine"
+  },
+  {
+    "pulaar":"pikiir","english": "shot"
+  },
+  {
+    "pulaar": "palu, jonte","english": "malaria"
+  },
+  {
+    "pulaar": "jalbi","english": "worms"
+  },
+  {
+    "pulaar": "naw giggol","english": "sexually transmitted illness"
+  },
+  {
+    "pulaar": "feti","english": "measles, Masern"
+  },
+  {
+    "pulaar": "puye","english": "bumps"
+  },
+  {
+    "pulaar": "dogu reedu","english": "diarrhea"
+  },
+  {
+    "pulaar": "muusu ndun","english": "the pain"
+  },
+  {
+    "pulaar": "durma","english": "a cold"
+  },
+  {
+    "pulaar": "barme","english": "wound"
+  },
+  {
+    "pulaar": "bullal","english": "abscess"
+  },
+  {
+    "pulaar": "No butti seeda?","english": "are you feeling better?"
+  },
+  {
+    "pulaar": "nanngugol","english": "to catch"
+  },
+  {
+    "pulaar": "wondugol","english": "to be with"
+  },
+  {
+    "pulaar": "muusugol","english": "to hurt"
+  },
+  {
+    "pulaar": "nawnugol","english": "to be sick"
+  },
+  {
+    "pulaar": "nawndugol","english": "to heal"
+  },
+  {
+    "pulaar": "dogugol","english": "to run"
+  },
+  {
+    "pulaar": "sikkugol","english": "to think, believe"
+  },
+  {
+    "pulaar": "tayugol","english": "to cut"
+  },
+  {
+    "pulaar": "barmugol","english": "to wound"
+  },
+  {
+    "pulaar": "buttugol","english": "to be better, to cool down"
+  },
+  {
+    "pulaar": "helugol","english": "to break"
+  },
+  {
+    "pulaar": "naabegol","english": "to have pinkeye"
+  },
+  {
+    "pulaar":"durmegol","english": "to have a cold"
+  },
+  {
+    "pulaar": "soofugol","english": "to urinate"
+  },
+  {
+    "pulaar":"bu’ugol","english": "to defecate"
+  },
+  {
+    "pulaar": "tuutugol","english": "to vomit"
+  },
+  {
+    "pulaar": "maayugol","english": "to die"
+  },
+  {
+    "pulaar": "dojjugol","english": "to cough"
+  },
+  {
+    "pulaar": "natugol","english": "to bite (mosquito, snake)"
+  },
+  {
+    "pulaar": "wonno ko jonte","english": "Maybe it’s malaria"
+  },
+  {
+    "pulaar": "No gasa ko dun","english": "Maybe that’s it"
+  },
+  {
+    "pulaar": "hoore nden","english": "the head"
+  },
+  {
+    "pulaar": "reedu ndun","english": "the stomach"
+  },
+  {
+    "pulaar": "daande nden","english": "the throat, the neck"
+  },
+  {
+    "pulaar": "yeeso ngon","english": "the face"
+  },
+  {
+    "pulaar": "sukundu ndun","english": "the hairs"
+  },
+  {
+    "pulaar": "bernde nden","english": "the heart"
+  },
+  {
+    "pulaar": "heyre nden","english": "the liver"
+  },
+  {
+    "pulaar": "yiiyan den","english": "the blood"
+  },
+  {
+    "pulaar": "gurii ngii","english": "the skin"
+  },
+  {
+    "pulaar":  "banndu ndun","english": "the body"
+  },
+  {
+    "pulaar": "baawo ngon","english": "the back"
+  },
+  {
+    "pulaar":"kinal ngal","english": "the nose"
+  },
+  {
+    "pulaar":"denngal ngal","english": "the tongue"
+  },
+  {
+    "pulaar":"yiitere nden","english": "the eye"
+  },
+  {
+    "pulaar":"gite den","english": "the eyes"
+  },
+  {
+    "pulaar":"junngo ngon","english": "the arm, the hand"
+  },
+  {
+    "pulaar": "juude den","english": "the arms, the hands"
+  },
+  {
+    "pulaar": "honndu ndun","english": "the finger"
+  },
+  {
+    "pulaar":  "kolli din","english": "the fingers"
+  },
+  {
+    "pulaar": "walbo ngon","english": "the shoulder"
+  },
+  {
+    "pulaar": "balbe den","english": "the shoulders"
+  },
+  {
+    "pulaar": "koyngal ngal","english": "the leg"
+  },
+  {
+    "pulaar": "koyden den","english": "the legs"
+  },
+  {
+    "pulaar":"forwre nden","english": "the buttock (pobacke)"
+  },
+  {
+    "pulaar":"bobi din","english": "the buttocks"
+  },
+  {
+    "pulaar":"niire nden","english": "the tooth"
+  },
+  {
+    "pulaar": "niiye den","english": "the teeth"
+  },
+  {
+    "pulaar":"howru ndun","english": "the knee"
+  },
+  {
+    "pulaar":"koppi din","english": "the knees"
+  },
+  {
+    "pulaar":"nowru ndun","english": "the ear"
+  },
+  {
+    "pulaar":"noppi din","english": "the ears"
+  },
+  {
+    "pulaar":"yi’al ngal","english": "the bone"
+  },
+  {
+    "pulaar":"yi’e den","english": "the bones"
+  },
+  {
+    "pulaar":"newre nden","english": "the palm of the hand"
+  },
+  {
+    "pulaar":"newe den","english": "the palms of the hand"
+  },
+  {
+    "pulaar":"teppere nden","english": "sole of the foot"
+  },
+  {
+    "pulaar":"teppe den","english": "soles of the feet"
+  },
+  {
+    "pulaar":"tonndu ndun","english": "the lip"
+  },
+  {
+    "pulaar":"toni din","english": "the lips"
+  },
+  {
+    "pulaar":"ko honndo o wa’i?","english": "what is he/she like?"
+  },
+  {
+    "pulaar":"himo njandi?","english": "Is he"
+  },
+  {
+    "pulaar":"himo juuti","english": "He is tall."
+  },
+  {
+    "pulaar":"o juutaa","english": "He is not tall"
+  },
+  {
+    "pulaar": "himo mari hakkil","english": "He is smart"
+  },
+  {
+    "pulaar": "O maraa kakkil few","english": "He has no brain at all."
+  },
+  {
+    "pulaar": "Himo njandi hoore","english": "He has a big head."
+  },
+  {
+    "pulaar": "Ko hundun muusay","english": "what hurts you?"
+  },
+  {
+    "pulaar": "ko honto muusay maa?","english": "where does it hurt?"
+  },
+  {
+    "pulaar": "ko hoore nden muusata ian","english": "It’s my head"
+  },
+  {
+    "pulaar": "hoore an nden no muusude ian","english": "my head is hurting me"
+  },
+  {
+    "pulaar": "ko hondun nanngu maa","english": "what do you have? what"
+  },
+  {
+    "pulaar":"ko jonte nanngu lan", "english": "That’s malaria I’ve got"
+  },
+  {
+    "pulaar": "Mido wondi e jalbi","english": "I have worms"
+  },
+  {
+    "pulaar": "Goddun natii I an","english": "Something bit me"
+  },
+  {
+    "pulaar": "Banndu an ndun no wuli","english": "I have a fever. / My body is hot"
+  },
+  {
+    "pulaar": "No butti seeda?","english": "Are you better?"
+  },
+  {
+    "pulaar":"rawnugol","english": "to be light-skinned"
+  },
+  {
+    "pulaar": "Yo alla beydu aafiya","english": "May God bring you peace."
+  },
+  {
+    "pulaar": "bawlugol","english": "to be dark-skinned"
+  },
+  {
+    "pulaar": "sewugol","english": "to be thin"
+  },
+  {
+    "pulaar": "semmbugol","english": "to be fat"
+  },
+  {
+    "pulaar": "juutugol","english": "to be tall"
+  },
+  {
+    "pulaar": "rabbidugol","english": "to be short"
+  },
+  {
+    "pulaar": "hawrugol","english": "to be average"
+  },
+  {
+    "pulaar": "labegol","english": "to be beautiful"
+  },
+  {
+    "pulaar": "kaanugol","english": "to be ugly"
+  },
+  {
+    "pulaar": "nawyugol","english": "to be cold"
+  },
+  {
+    "pulaar":  "weltagol","english": "to be happy"
+  },
+  {
+    "pulaar": "komidugol","english": "to be stupid"
+  },
+  {
+    "pulaar": "yoyugol","english": "to be clever"
+  },
+  {
+    "pulaar": "moyyugol","english": "to be good"
+  },
+  {
+    "pulaar":"bonugol","english": "to be bad"
+  },
+  {
+    "pulaar": "dolnugol","english": "to be strong"
+  },
+  {
+    "pulaar": "lo’ugol","english": "to be weak"
+  },
+  {
+    "pulaar": "arsikegol","english": "to be lucky"
+  },
+  {
+    "pulaar": "njandugol","english": "to be big, thick"
+  },
+  {
+    "pulaar": "fandugol","english": "to be small"
+  }
+]

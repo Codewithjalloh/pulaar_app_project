@@ -1,0 +1,527 @@
+[
+  {
+    "pulaar": "anndugol","english": "to know"
+  },
+  {
+    "pulaar": "benndugol","english": "to be ripe or ready"
+  },
+  {
+    "pulaar": "buubugol","english": "to be cold"
+  },
+  {
+    "pulaar": "dondegol","english": "to be thirsty"
+  },
+  {
+    "pulaar": "faalegol","english": "to want"
+  },
+  {
+    "pulaar": "hawjugol","english": "to be in a hurry"
+  },
+  {
+    "pulaar": "jeyugol","english": "to own"
+  },
+  {
+    "pulaar": "jogagol","english": "to hold"
+  },
+  {
+    "pulaar": "leetugol","english": "to be late"
+  },
+  {
+    "pulaar": "marugol","english": "to have"
+  },
+  {
+    "pulaar": "moyyugol","english": "to be good"
+  },
+  {
+    "pulaar": "nonugol","english": "to be sleepy"
+  },
+  {
+    "pulaar": "ronkugol","english": "to be tired"
+  },
+  {
+    "pulaar":  "waawugol","english": "to be able(to do sth.)"
+  },
+  {
+    "pulaar": "weelegol","english": "to be hungry"
+  },
+  {
+    "pulaar": "welugol","english": "to taste good"
+  },
+  {
+    "pulaar": "wonugol","english": "to be"
+  },
+  {
+    "pulaar": "wulugol","english": "to be hot"
+  },
+  {
+    "pulaar": "yidugol","english": "to like"
+  },
+  {
+    "pulaar": "yonugol","english": "to be enough"
+  },
+  {
+    "pulaar": "beydugol","english": "to add, increase"
+  },
+  {
+    "pulaar":  "defugol","english": "to cook"
+  },
+  {
+    "pulaar": "haarugol","english": "to be full"
+  },
+  {
+    "pulaar": "hebugol","english": "to obtain"
+  },
+  {
+    "pulaar": "hirtagol","english": "to eat dinner"
+  },
+  {
+    "pulaar":  "hiwragol","english": "to greet"
+  },
+  {
+    "pulaar":  "hudugol","english": "to live (somewhere)"
+  },
+  {
+    "pulaar":  "ittugol kooje","english": "to eat breakfast"
+  },
+  {
+    "pulaar": "iwugol","english": "to come from"
+  },
+  {
+    "pulaar": "lootagol","english": "to wash oneself"
+  },
+  {
+    "pulaar": "naamugol","english": "to eat"
+  },
+  {
+    "pulaar": "soyyugol","english": "to eat lunch"
+  },
+  {
+    "pulaar": "yarugol","english": "to drink"
+  },
+  {
+    "pulaar": "yakkugol","english": "to munch, bite"
+  },
+  {
+    "pulaar": "moyya","english": "well"
+  },
+  {
+    "pulaar": "buy","english": "a lot"
+  },
+  {
+    "pulaar": "seeda","english": "a little"
+  },
+  {
+    "pulaar": "tun","english": "only"
+  },
+  {
+    "pulaar": "bantara on","english": "the cassava, manioc"
+  },
+  {
+    "pulaar": "basalle on","english": "the onion"
+  },
+  {
+    "pulaar": "biraadan dan","english": "the milk"
+  },
+  {
+    "pulaar":  "bireedi on","english": "the bread"
+  },
+  {
+    "pulaar":  "boofo on","english": "the egg"
+  },
+  {
+    "pulaar": "buudi on","english": "the papaya or squash"
+  },
+  {
+    "pulaar": "gerto on","english": "the chicken"
+  },
+  {
+    "pulaar": "jakatu on","english": "the bitter eggplant"
+  },
+  {
+    "pulaar":  "kaaba on","english": "the corn"
+  },
+  {
+    "pulaar":  "kaccu on","english": "the lemon"
+  },
+  {
+    "pulaar": "kobokobo on","english": "the eggplant"
+  },
+  {
+    "pulaar": "kosan dan","english": "the sour milk"
+  },
+  {
+    "pulaar": "lacciri ndin","english": "the corn couscous"
+  },
+  {
+    "pulaar": "landan dan","english": "the salt"
+  },
+  {
+    "pulaar": "leemune on","english": "the orange"
+  },
+  {
+    "pulaar": "liyyi din","english": "the fishes"
+  },
+  {
+    "pulaar":  "maafe kon","english": "the sauce"
+  },
+  {
+    "pulaar": "maafe haako","english": "leaf sauce"
+  },
+  {
+    "pulaar": "maafe suppu","english": "“soup” sauce"
+  },
+  {
+    "pulaar": "maafe tiga","english": "peanut sauce"
+  },
+  {
+    "pulaar":  "maaro kon","english": "the uncooked rice"
+  },
+  {
+    "pulaar":  "mbeewa mban","english": "the goat"
+  },
+  {
+    "pulaar": "namaku on","english": "the hot pepper"
+  },
+  {
+    "pulaar": "ndiyan dan","english": "the water"
+  },
+  {
+    "pulaar": "nebban dan","english": "the oil"
+  },
+  {
+    "pulaar": "niiri ndin","english": "the cooked grain"
+  },
+  {
+    "pulaar": "piya on","english": "the avocado"
+  },
+  {
+    "pulaar": "powabar on","english": "the pepper"
+  },
+  {
+    "pulaar": "pompiteeri on","english": "the potato"
+  },
+  {
+    "pulaar": "putee on","english": "the sweet potato"
+  },
+  {
+    "pulaar": "salaadi on","english": "the lecture"
+  },
+  {
+    "pulaar": "suu on","english": "the cabbage"
+  },
+  {
+    "pulaar": "sukkar on","english": "the sugar"
+  },
+  {
+    "pulaar": "taku on","english": "the okra"
+  },
+  {
+    "pulaar":  "tamaati on","english": "the tomato"
+  },
+  {
+    "pulaar": "teewu ngun","english": "the meat"
+  },
+  {
+    "pulaar": "tiga on","english": "the peanut"
+  },
+  {
+    "pulaar": "pileeti on","english": "the plate"
+  },
+  {
+    "pulaar":  "kuyer on","english": "the spoon"
+  },
+  {
+    "pulaar": "furseeti on","english": "the fork"
+  },
+  {
+    "pulaar": "labi kin","english": "the knife"
+  },
+  {
+    "pulaar": "tassi on","english": "the cup"
+  },
+  {
+    "pulaar": "hurgo ngon","english": "the latrine"
+  },
+  {
+    "pulaar": "kuri on","english": "the kitchen hut"
+  },
+  {
+    "pulaar": "tannde on","english": "the gravel year"
+  },
+  {
+    "pulaar": "galle nden","english": "the family compound"
+  },
+  {
+    "pulaar": "ko hondun","english": "what"
+  },
+  {
+    "pulaar": "ko hommbo","english": "who"
+  },
+  {
+    "pulaar": "fii hondun","english": "why"
+  },
+  {
+    "pulaar": "ko honnde tuma","english": "when"
+  },
+  {
+    "pulaar":"ko jelu","english": "how much / how many (objects)"
+  },
+  {
+    "pulaar": "ko njelo","english": "how many people"
+  },
+  {
+    "pulaar":  "ko honto","english": "where"
+  },
+  {
+    "pulaar": "beydu seeda","english": "eat a little more!"
+  },
+  {
+    "pulaar": "niiri no woodi?","english": "Is there any food?"
+  },
+  {
+    "pulaar": "niiri no woodi","english": "there is food"
+  },
+  {
+    "pulaar": "Alaa.","english": "There is none"
+  },
+  {
+    "pulaar":  "niiri alaa","english": "there is no food."
+  },
+  {
+    "pulaar": "Yo mi addu niir","english": "Shall I bring food?"
+  },
+  {
+    "pulaar": "okkoran niiri","english": "let me have some food."
+  },
+  {
+    "pulaar":  "okkoran ndiyan mi yara","english": "let me have water to drink"
+  },
+  {
+    "pulaar":  "Bismillahi!","english": "welcome! (in god’s name)"
+  },
+  {
+    "pulaar":  "ko tooli!","english": "welcome! (be seated)"
+  },
+  {
+    "pulaar": "Albarka","english": "thank you (God bless you)"
+  },
+  {
+    "pulaar":  "barka’ alla","english": "you are welcome"
+  },
+  {
+    "pulaar": "No weli","english": "it tastes good!"
+  },
+  {
+    "pulaar": "welaa!","english": "it taste bad"
+  },
+  {
+    "pulaar": "mi haari","english": "I’m full."
+  },
+  {
+    "pulaar": "mido faalaa","english": "I want…"
+  },
+  {
+    "pulaar":  "mi faalaaka","english": "I don’t want…"
+  },
+  {
+    "pulaar":  "mido weelaa","english": "I’m hungry"
+  },
+  {
+    "pulaar":  "mi weelaaka","english": "I’m not hungry"
+  },
+  {
+    "pulaar": "mido dondaa","english": "I’m thirsty"
+  },
+  {
+    "pulaar":  "Mi dondaaka","english": "I’m not thirsty"
+  },
+  {
+    "pulaar":  "mido faalaa yahude ka hurgo","english": "I need to go to the bathroom"
+  },
+  {
+    "pulaar":  "niiri ndin no metti","english": "the food tastes bad"
+  },
+  {
+    "pulaar":  "weelegol","english": "to be hungry"
+  },
+  {
+    "pulaar": "mettugol","english": "to taste bad"
+  },
+  {
+    "pulaar": "hibe yidi maafe tiga","english": "they like peanut sauce"
+  },
+  {
+    "pulaar":  "baafal ngal no udditii","english": "the door is open"
+  },
+  {
+    "pulaar": "hida faalaa naamugol","english": "do you want to eat?"
+  },
+  {
+    "pulaar": "Mi anndaa bubakar","english": "I don’t know Bubakar"
+  },
+  {
+    "pulaar": "Baafal ngal ommbaaki","english": "The door is not shut"
+  },
+  {
+    "pulaar": "O faalaaka teewu","english": "He doesn’t want meat"
+  },
+  {
+    "pulaar":  "mido weelaa","english": "I am hungry"
+  },
+  {
+    "pulaar": "kosan welaa","english": "kosan doesn’t taste good."
+  },
+  {
+    "pulaar": "himo waawi pular","english": "he can speak pular"
+  },
+  {
+    "pulaar": "Bubakar no waawi pular","english": "bubakar can speak pular"
+  },
+  {
+    "pulaar": "portojo on no weelaa","english": "the portojo is hungry"
+  },
+  {
+    "pulaar": "no moyyi","english": "that’s good!"
+  },
+  {
+    "pulaar":  "maafe kon welaa","english": "the sauce is not good."
+  },
+  {
+    "pulaar":  "mi weelaaka","english": "i am not hungry"
+  },
+  {
+    "pulaar":  "moyyaa","english": "that’s not good!"
+  },
+  {
+    "pulaar": "ko hommbo yahi ka maakiti hannde","english": "who went to the"
+  },
+  {
+    "pulaar": "ko honto yahudaa hannde?","english": "where did you go today?"
+  },
+  {
+    "pulaar": "ko honnde tuma yahudaa ka maakiti","english": "when did you go to the market?"
+  },
+  {
+    "pulaar": "ko min yahi ka maakiti hannde.","english": "it is me who went to the market today"
+  },
+  {
+    "pulaar": "ko ka maakiti mi yahi hannde","english": "it is to the market where I went today"
+  },
+  {
+    "pulaar": "Ko hannde mi yahi ka maakiti","english": "it is today that I went to the market"
+  },
+  {
+    "pulaar":  "hoorugol","english": "to fast"
+  },
+  {
+    "pulaar":  "Enee, Porto, a hoorataa?","english": "Hey, porto, aren’t you fasting?"
+  },
+  {
+    "pulaar": "mi alaa hoorude","english": "I’m not fasting."
+  },
+  {
+    "pulaar":"Mi waawaali","english": "I couldn’t (do it)"
+  },
+  {
+    "pulaar":"wonaa mi juldo","english": "I’m not muslim."
+  },
+  {
+    "pulaar": "Ko hommbo defi niiri ndin?","english": "We cooked the food?"
+  },
+  {
+    "pulaar": "ko beyngu an defi","english": "my wife cooked it"
+  },
+  {
+    "pulaar": "ko honnde tuma hewtuden","english": "when did we arrive?"
+  },
+  {
+    "pulaar": "ko e dix-heures hewtuden","english": "That’s at ten o’clock we arrived"
+  },
+  {
+    "pulaar": "ko honto joodidaa","english": "where did you sit?"
+  },
+  {
+    "pulaar": "ko doo mi joodii","english": "That’s here I sat."
+  },
+  {
+    "pulaar": "Ko hondun faaladon","english": "what do you all want?"
+  },
+  {
+    "pulaar": "ko ndiyan men faalaa","english": "That’s water we want (exclusive)"
+  },
+  {
+    "pulaar": "mi haari tef","english": "I am totally full!"
+  },
+  {
+    "pulaar":  "hida kaani kas!","english": "You are very ugly!"
+  },
+  {
+    "pulaar":  "Dan ndiyan no wojji cos","english": "That water is totally red!"
+  },
+  {
+    "pulaar": "oto on no heewi tef!","english": "the car is completely full!"
+  },
+  {
+    "pulaar": "benndi mor","english": "very rip"
+  },
+  {
+    "pulaar": "labbi poy","english": "very clean"
+  },
+  {
+    "pulaar": "yoyi ken","english": "very clever"
+  },
+  {
+    "pulaar": "rawni pen","english": "very white"
+  },
+  {
+    "pulaar":  "feewi yet","english": "very straight"
+  },
+  {
+    "pulaar": "wuli kat","english": "very hot"
+  },
+  {
+    "pulaar": "selli ken","english": "very healthy"
+  },
+  {
+    "pulaar": "tuuni tus","english": "very dirty"
+  },
+  {
+    "pulaar":  "luubi dus","english": "very stinky"
+  },
+  {
+    "pulaar":  "buubi jip","english": "very cold"
+  },
+  {
+    "pulaar":  "bawli kis","english": "black"
+  },
+  {
+    "pulaar": "yo be aru","english": "They must come!"
+  },
+  {
+    "pulaar":  "yo mi addu ndiyan","english": "Shall I bring water?"
+  },
+  {
+    "pulaar":  "Himo faalaa yo a looto","english": "he wants you to bath."
+  },
+  {
+    "pulaar": "woo yo a yahu","english": "(She said) you should go (sing)"
+  },
+  {
+    "pulaar": "wata be aru","english": "They must not come!"
+  },
+  {
+    "pulaar": "wata gerto yaw ko hoccata","english": "A chicken shouldn’t sneer at what it gathers. (Beggars can’t be choosers.)"
+  },
+  {
+    "pulaar": "Ko jooni mi naami","english": "that’s now I just ate."
+  },
+  {
+    "pulaar": "Mi defaali hannde","english": "I din’t cook today"
+  },
+  {
+    "pulaar": "ko seeda nii mi defi hannde","english": "That’s just a little I cooked today"
+  },
+  {
+    "pulaar": "Fayda mi gaynii","english": "I’m almost finished"
+  }
+]

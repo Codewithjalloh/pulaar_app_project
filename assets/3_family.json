@@ -1,0 +1,216 @@
+[
+  {
+  "pulaar": "Baaba",
+  "english": "father"
+  },
+  {
+    "pulaar": "Neene","english": "mother"
+  },
+  {
+    "pulaar": "Ben","english": "father (respectful)"
+  },
+  {
+    "pulaar": "Yuuma","english": "mother (respectful)"
+  },
+  {
+    "pulaar": "Ben mawdo","english": "father’s older brother"
+  },
+  {
+    "pulaar": "Minan","english": "younger brother or sister"
+  },
+  {
+    "pulaar": "Koto","english": "older brother"
+  },
+  {
+    "pulaar": "Jaaja","english": "older sister"
+  },
+  {
+    "pulaar": "Kaawu","english": "mother’s brother"
+  },
+  {
+    "pulaar": "Bappa","english": "father’s younger brother"
+  },
+  {
+    "pulaar": "Yaaye","english": "father’s sister"
+  },
+  {
+    "pulaar": "Soro","english": "grandfather"
+  },
+  {
+    "pulaar": "Pati","english": "grandmother"
+  },
+  {
+    "pulaar": "Beyngu","english": "wife"
+  },
+  {
+    "pulaar": "Moodi","english": "husband"
+  },
+  {
+    "pulaar": "Keynan","english": "older sister’s husband or wife’s younger brother"
+  },
+  {
+    "pulaar": "Esiraawo","english": "in-law"
+  },
+  {
+    "pulaar": "Neenegooto","english": "full sibling (same mother, same father)"
+  },
+  {
+    "pulaar": "Baabagooto","english": "half sibling (same father different"
+  },
+  {
+    "pulaar": "Siinaa","english": "co-wife"
+  },
+  {
+    "pulaar": "Taanira","english": "grandchild"
+  },
+  {
+    "pulaar": "Mawbe","english": "parents, older relative, old ones"
+  },
+  {
+    "pulaar": "Biddo (bibbe)","english": "child (children)"
+  },
+  {
+    "pulaar": "Goreejo","english": "age-mate"
+  },
+  {
+    "pulaar": "Beynguure nden","english": "the unclear family (wives and children)"
+  },
+  {
+    "pulaar":  "Musidal ngal","english": "extended family"
+  },
+  {
+    "pulaar":  "Musiddo, siddo","english": "relative"
+  },
+  {
+    "pulaar": "Njaatigi","english": "friend, lover"
+  },
+  {
+    "pulaar": "Gido","english": "friend"
+  },
+  {
+    "pulaar": "Ko hommbo nii?","english": "who is that?"
+  },
+  {
+    "pulaar": "Ko saliu nii","english": "that is Saliu"
+  },
+  {
+    "pulaar": "Ko koto an nii","english": "that my older brother"
+  },
+  {
+    "pulaar":  "Ko minniraabe njelo marudaa?","english": "that’s 3 younger sibling I"
+  },
+  {
+    "pulaar": "Ko duubi jeli marudaa?","english": "How old are you?"
+  },
+  {
+    "pulaar": "Ko duubi nogay e jeetati mi mari","english": "I am twenty-eight"
+  },
+  {
+    "pulaar": "Ko duubi jelu o mari","english": "how old is he"
+  },
+  {
+    "pulaar": "Ko duubi sappo e go’oo mari.","english": "that’s eleven year old, he has."
+  },
+  {
+    "pulaar": "Adama hawa ko jaaja an","english": "Adam hawa is my older sister"
+  },
+  {
+    "pulaar": "Jariatu ko beyngu yanuusa","english": "Jariatu is yunuusa’s wife"
+  },
+  {
+    "pulaar": "Amerikenbe taco","english": "three Americans"
+  },
+  {
+    "pulaar": "Duubi Tati","english": "three years"
+  },
+  {
+    "pulaar":  "Ameriken njelo","english": "how many Americans"
+  },
+  {
+    "pulaar": "Duubi jelu","english": "how many years"
+  },
+  {
+    "pulaar": "Go’o, gooto","english": "one"
+  },
+  {
+    "pulaar": "Didi, dido","english": "two"
+  },
+  {
+    "pulaar": "Tati, tato","english": "three"
+  },
+  {
+    "pulaar": "Nay, nayo","english": "four"
+  },
+  {
+    "pulaar": "Jowi, jowo","english": "five"
+  },
+  {
+    "pulaar": "Jeego, jeego","english": "six"
+  },
+  {
+    "pulaar": "Jeedidi, jeedido","english": "seven"
+  },
+  {
+    "pulaar": "Jeetati, jeetato","english": "eight"
+  },
+  {
+    "pulaar": "Jeenay, jeenayo","english": "nine"
+  },
+  {
+    "pulaar": "Sappo, Sappo","english": "ten"
+  },
+  {
+    "pulaar": "Sappo e go’o, sappo e go’o","english": "eleven"
+  },
+  {
+    "pulaar":  "Sappo e didi, sappo e dido","english": "twelve"
+  },
+  {
+    "pulaar": "Sappo e jeenay, sappo e jeenayo","english": "nineteen"
+  },
+  {
+    "pulaar": "Nogay, nogayo","english": "twenty"
+  },
+  {
+    "pulaar":  "Nogay e go’o, notate e go’o","english": "twenty-one"
+  },
+  {
+    "pulaar":  "Cappande Tati, cappande tato","english": "thirty"
+  },
+  {
+    "pulaar": "Cappande tati e go’o, cappande taco e go’o","english": "thirty-one"
+  },
+  {
+    "pulaar":  "Cappande nay","english": "forty"
+  },
+  {
+    "pulaar": "Cappande jowl","english": "fifty"
+  },
+  {
+    "pulaar": "Cappande jeego","english": "sixty"
+  },
+  {
+    "pulaar": "Cappande jeedidi","english": "seventy"
+  },
+  {
+    "pulaar": "Cappande jeetati","english": "eighty"
+  },
+  {
+    "pulaar": "Cappande jeenay","english": "ninety"
+  },
+  {
+    "pulaar": "Ko baaba an nii","english": "that is my father"
+  },
+  {
+    "pulaar": "Ko baaba Amadou nii","english": "That is Amadou’s father"
+  },
+  {
+    "pulaar": "Mi waawaa pular","english": "I don’t speak pular"
+  },
+  {
+    "pulaar": "Woo, o Sanaa pular.","english": "(He says) he doesn’t speak pular."
+  },
+  {
+    "pulaar": "Woo himo mari bibbe nogayo","english": "They say he has twenty children."
+  }
+]
