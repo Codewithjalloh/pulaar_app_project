@@ -22,6 +22,7 @@ class Assets {
   static const String assetsDateTime = 'assets/date_time.json';
   static const String assetsMustKnowWords = 'assets/must_know_words.json';
   static const String assetsNumbers = 'assets/numbers.json';
+  static const String assetsPlaceholder = 'assets/placeholder.png';
   static const String assetsPoliteWords = 'assets/polite_words.json';
   static const String assetsSeasons = 'assets/seasons.json';
   static const String pulaarAssetsMustKnowWords = 'assets/must_know_words.json';
