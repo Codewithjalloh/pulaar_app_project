@@ -15,8 +15,14 @@ class Assets {
   static const String assets5Food = 'assets/5_food.json';
   static const String assets6Body = 'assets/6_body.json';
   static const String assets7Shopping = 'assets/7_shopping.json';
-  static const String assets8TravelAndDirection = 'assets/8_travel_and_direction.json';
+  static const String assets8TravelAndDirection =
+      'assets/8_travel_and_direction.json';
   static const String assets9DailyActivities = 'assets/9_daily_activities.json';
-  static const String assetsMustKnowWords.json = 'assets/must_know_words.json';
-
+  static const String assetsBasicWords = 'assets/basic_words.json';
+  static const String assetsDateTime = 'assets/date_time.json';
+  static const String assetsMustKnowWords = 'assets/must_know_words.json';
+  static const String assetsNumbers = 'assets/numbers.json';
+  static const String assetsPoliteWords = 'assets/polite_words.json';
+  static const String assetsSeasons = 'assets/seasons.json';
+  static const String pulaarAssetsMustKnowWords = 'assets/must_know_words.json';
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pulaar/services/must_know_words_service.dart';
+import '../services/must_know_words.dart';
+import '../model/word.dart';
 
 class MustKnowWordsScreen extends StatefulWidget {
   @override
@@ -107,17 +108,17 @@ class _MustKnowWordsScreenState extends State<MustKnowWordsScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _buildWordRow('English', word.english, ''),
-                        _buildWordRow(
-                            'French', word.french, word.frenchPronunciation),
-                        _buildWordRow(
-                            'Chinese', word.chinese, word.chinesePronunciation),
-                        _buildWordRow(
-                            'Dutch', word.dutch, word.dutchPronunciation),
-                        _buildWordRow(
-                            'Russian', word.russian, word.russianPronunciation),
-                        _buildWordRow(
-                            'Arabic', word.arabic, word.arabicPronunciation),
+                        _buildWordRow('English', word.english, '', context),
+                        _buildWordRow('French', word.french,
+                            word.frenchPronunciation, context),
+                        _buildWordRow('Chinese', word.chinese,
+                            word.chinesePronunciation, context),
+                        _buildWordRow('Dutch', word.dutch,
+                            word.dutchPronunciation, context),
+                        _buildWordRow('Russian', word.russian,
+                            word.russianPronunciation, context),
+                        _buildWordRow('Arabic', word.arabic,
+                            word.arabicPronunciation, context),
                       ],
                     ),
                   ),
@@ -130,26 +131,30 @@ class _MustKnowWordsScreenState extends State<MustKnowWordsScreen> {
     );
   }
 
-  Widget _buildWordRow(
-      String language, String translation, String pronunciation) {
+  Widget _buildWordRow(String language, String translation,
+      String pronunciation, BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Row(
         children: [
           Text(
             '$language: ',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
           ),
           Expanded(
             child: Text(
               translation,
-              style: TextStyle(fontSize: 18),
+              style: textTheme.bodyLarge?.copyWith(fontSize: 16),
             ),
           ),
           if (pronunciation.isNotEmpty)
             Text(
               '($pronunciation)',
-              style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
+              style: textTheme.bodyMedium?.copyWith(
+                fontSize: 14,
+                fontStyle: FontStyle.italic,
+              ),
             ),
         ],
       ),
