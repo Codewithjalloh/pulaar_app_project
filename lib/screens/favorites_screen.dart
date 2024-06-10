@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../services//favorite_phrases_provider.dart';
 import '../components/custom_drawer.dart';
-import '../model/phrase.dart';
 
 class FavoritesScreen extends StatelessWidget {
-  final List<Phrase> favoritePhrases;
-
-  FavoritesScreen({required this.favoritePhrases});
-
   @override
   Widget build(BuildContext context) {
+    final favoritePhrases =
+        Provider.of<FavoritePhrasesProvider>(context).favoritePhrases;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Favorite Phrases'),
       ),
-      drawer: CustomDrawer(
-        favoritePhrases: [],
-      ),
+      drawer: CustomDrawer(),
       body: OrientationBuilder(
         builder: (context, orientation) {
           final isPortrait = orientation == Orientation.portrait;

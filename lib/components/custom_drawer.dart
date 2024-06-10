@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../services/firebase_auth_service.dart';
 import '../screens/fulani_history_screen.dart';
 import '../screens/information_screen.dart';
 import '../screens/quiz_section_screen.dart';
 import '../screens/currency_converter_screen.dart';
 import '../screens/african_countries_screen.dart';
 import '../screens/must_know_words_screen.dart';
+import '../screens/favorites_screen.dart';
 import '../screens/login_screen.dart';
-import '../screens/profile_screen.dart';
-import '../screens/chat_screen.dart';
-import '../screens/home_page.dart';
 
 class CustomDrawer extends StatelessWidget {
-  final FirebaseAuthService _authService = FirebaseAuthService();
-
   @override
   Widget build(BuildContext context) {
-    final User? user = _authService.currentUser;
+    final User? user = FirebaseAuth.instance.currentUser;
 
     return Drawer(
       child: ListView(
@@ -42,12 +37,7 @@ class CustomDrawer extends StatelessWidget {
             text: 'Home',
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomePage(),
-                ),
-              );
+              Navigator.pushNamed(context, '/');
             },
           ),
           _buildDrawerItem(
@@ -56,12 +46,16 @@ class CustomDrawer extends StatelessWidget {
             text: 'Quiz',
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => QuizSectionScreen(),
-                ),
-              );
+              Navigator.pushNamed(context, '/quiz_section');
+            },
+          ),
+          _buildDrawerItem(
+            context,
+            icon: Icons.favorite,
+            text: 'Favorites',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/favorites');
             },
           ),
           _buildDrawerItem(
@@ -70,12 +64,7 @@ class CustomDrawer extends StatelessWidget {
             text: 'Fulani History',
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => FulaniHistoryScreen(),
-                ),
-              );
+              Navigator.pushNamed(context, '/fulani_history');
             },
           ),
           _buildDrawerItem(
@@ -84,12 +73,7 @@ class CustomDrawer extends StatelessWidget {
             text: 'Currency Converter',
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CurrencyConverterScreen(),
-                ),
-              );
+              Navigator.pushNamed(context, '/currency_converter');
             },
           ),
           _buildDrawerItem(
@@ -98,12 +82,7 @@ class CustomDrawer extends StatelessWidget {
             text: 'African Countries',
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => AfricanCountriesScreen(),
-                ),
-              );
+              Navigator.pushNamed(context, '/african_countries');
             },
           ),
           _buildDrawerItem(
@@ -112,48 +91,16 @@ class CustomDrawer extends StatelessWidget {
             text: 'Must Know 100 Words',
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MustKnowWordsScreen(),
-                ),
-              );
+              Navigator.pushNamed(context, '/must_know_words');
             },
           ),
           _buildDrawerItem(
             context,
-            icon: Icons.chat,
-            text: 'Chat',
+            icon: Icons.login,
+            text: 'Login',
             onTap: () {
               Navigator.pop(context);
-              if (user == null) {
-                _showLoginPrompt(context);
-              } else {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ChatScreen(),
-                  ),
-                );
-              }
-            },
-          ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.account_circle,
-            text: 'Profile',
-            onTap: () {
-              Navigator.pop(context);
-              if (user == null) {
-                _showLoginPrompt(context);
-              } else {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ProfileScreen(),
-                  ),
-                );
-              }
+              Navigator.pushNamed(context, '/login');
             },
           ),
           _buildDrawerItem(
@@ -162,48 +109,11 @@ class CustomDrawer extends StatelessWidget {
             text: 'Info',
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => InformationScreen(),
-                ),
-              );
+              Navigator.pushNamed(context, '/information');
             },
           ),
         ],
       ),
-    );
-  }
-
-  void _showLoginPrompt(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Login Required'),
-          content: Text('Please log in to access this feature.'),
-          actions: [
-            TextButton(
-              child: Text('Cancel'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            TextButton(
-              child: Text('Login'),
-              onPressed: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LoginScreen(),
-                  ),
-                );
-              },
-            ),
-          ],
-        );
-      },
     );
   }
 

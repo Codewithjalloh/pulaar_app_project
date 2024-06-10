@@ -1,20 +1,18 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import '../model/phrase.dart';
-import 'phrase_detail_screen.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:provider/provider.dart';
+import '../model/phrase.dart';
+import '../services//favorite_phrases_provider.dart';
+import 'phrase_detail_screen.dart';
 
 class CategoryScreen extends StatefulWidget {
   final String title;
   final String filename;
-  final Function(Phrase) toggleFavorite;
-  final List<Phrase> favoritePhrases;
 
   CategoryScreen({
     required this.title,
     required this.filename,
-    required this.toggleFavorite,
-    required this.favoritePhrases,
   });
 
   @override
@@ -47,45 +45,36 @@ class _CategoryScreenState extends State<CategoryScreen> {
       ),
       body: _phrases.isEmpty
           ? Center(child: CircularProgressIndicator())
-          : OrientationBuilder(
-              builder: (context, orientation) {
-                final isPortrait = orientation == Orientation.portrait;
+          : ListView.builder(
+              itemCount: _phrases.length,
+              itemBuilder: (context, index) {
+                final phrase = _phrases[index];
+                final isFavorite = context
+                    .watch<FavoritePhrasesProvider>()
+                    .favoritePhrases
+                    .contains(phrase);
 
-                return ListView.builder(
-                  itemCount: _phrases.length,
-                  itemBuilder: (context, index) {
-                    final phrase = _phrases[index];
-                    final isFavorite = widget.favoritePhrases.contains(phrase);
-
-                    return ListTile(
-                      title: Text(
-                        phrase.english,
-                        style: TextStyle(fontSize: isPortrait ? 18 : 16),
+                return ListTile(
+                  title: Text(phrase.english),
+                  subtitle: Text(phrase.pulaar),
+                  trailing: IconButton(
+                    icon: Icon(
+                      isFavorite ? Icons.favorite : Icons.favorite_border,
+                      color: isFavorite ? Colors.red : null,
+                    ),
+                    onPressed: () {
+                      context
+                          .read<FavoritePhrasesProvider>()
+                          .toggleFavorite(phrase);
+                    },
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            PhraseDetailScreen(phrase: phrase),
                       ),
-                      subtitle: Text(
-                        phrase.pulaar,
-                        style: TextStyle(fontSize: isPortrait ? 16 : 14),
-                      ),
-                      trailing: IconButton(
-                        icon: Icon(
-                          isFavorite ? Icons.favorite : Icons.favorite_border,
-                          color: isFavorite ? Colors.red : null,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            widget.toggleFavorite(phrase);
-                          });
-                        },
-                      ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                PhraseDetailScreen(phrase: phrase),
-                          ),
-                        );
-                      },
                     );
                   },
                 );

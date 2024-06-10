@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/firebase_auth_service.dart';
-import '../screens//home_page.dart';
+import 'package:pulaar/screens/home_page_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -29,7 +29,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => HomePage(),
+          builder: (context) => HomePageScreen(),
         ),
       );
     } else {

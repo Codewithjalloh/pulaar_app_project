@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/firebase_auth_service.dart';
 import 'register_screen.dart';
-import 'home_page.dart';
+import 'package:pulaar/screens/home_page_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => HomePage(),
+          builder: (context) => HomePageScreen(),
         ),
       );
     } else {

@@ -7,53 +7,16 @@ import '../model/section.dart';
 import '../screens/category_screen.dart';
 import '../screens/chat_screen.dart';
 import '../screens/profile_screen.dart';
+import 'package:provider/provider.dart';
+import '../services//favorite_phrases_provider.dart';
 
-class HomePage extends StatefulWidget {
+class HomePageScreen extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageScreenState createState() => _HomePageScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageScreenState extends State<HomePageScreen> {
   int _selectedIndex = 0;
-  List<Phrase> favoritePhrases = [];
-
-  @override
-  void initState() {
-    super.initState();
-    _loadFavorites();
-  }
-
-  Future<void> _loadFavorites() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<String>? favoriteStrings = prefs.getStringList('favoritePhrases');
-    if (favoriteStrings != null) {
-      setState(() {
-        favoritePhrases = favoriteStrings
-            .map((json) => Phrase.fromJson(jsonDecode(json)))
-            .toList();
-      });
-    }
-  }
-
-  void _toggleFavorite(Phrase phrase) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      if (favoritePhrases.contains(phrase)) {
-        favoritePhrases.remove(phrase);
-      } else {
-        favoritePhrases.add(phrase);
-      }
-      List<String> favoriteStrings =
-          favoritePhrases.map((phrase) => jsonEncode(phrase.toJson())).toList();
-      prefs.setStringList('favoritePhrases', favoriteStrings);
-    });
-  }
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   static List<Widget> _widgetOptions = <Widget>[
     HomePageContent(),
@@ -61,13 +24,19 @@ class _HomePageState extends State<HomePage> {
     ProfileScreen(),
   ];
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Pulaar"),
       ),
-      drawer: CustomDrawer(favoritePhrases: favoritePhrases),
+      drawer: CustomDrawer(),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -112,13 +81,6 @@ class HomePageContent extends StatelessWidget {
                     builder: (context) => CategoryScreen(
                       title: section.title,
                       filename: section.filename,
-                      toggleFavorite: (phrase) => context
-                          .findAncestorStateOfType<_HomePageState>()
-                          ?._toggleFavorite(phrase),
-                      favoritePhrases: context
-                              .findAncestorStateOfType<_HomePageState>()
-                              ?.favoritePhrases ??
-                          [],
                     ),
                   ),
                 );

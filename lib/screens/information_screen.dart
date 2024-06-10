@@ -8,68 +8,55 @@ class InformationScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Information'),
       ),
-      drawer: CustomDrawer(
-        favoritePhrases: [],
-      ),
+      drawer: CustomDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: OrientationBuilder(
-          builder: (context, orientation) {
-            final isPortrait = orientation == Orientation.portrait;
-
-            return ListView(
-              children: [
-                _buildSectionTitle('About This App', isPortrait),
-                _buildSectionText(
-                  'This app is designed to help users learn and understand the Pulaar language. '
-                  'Pulaar, also known as Fula, is spoken by the Fula people across West Africa.',
-                  isPortrait,
-                ),
-                SizedBox(height: 20),
-                _buildSectionTitle('How to Use', isPortrait),
-                _buildSectionText(
-                  'Navigate through the different categories to find common phrases and their English translations. '
-                  'Tap on any phrase to see more details.',
-                  isPortrait,
-                ),
-                SizedBox(height: 20),
-                _buildSectionTitle('Credits', isPortrait),
-                _buildSectionText(
-                  'This app was developed by techrisemedia. Special thanks to all contributors who provided the data and resources.',
-                  isPortrait,
-                ),
-                SizedBox(height: 20),
-                _buildSectionTitle('Contact Us', isPortrait),
-                _buildSectionText(
-                  'For any questions or feedback, please contact us at codewithjalloh@gmail.com.',
-                  isPortrait,
-                ),
-              ],
-            );
-          },
+        child: ListView(
+          children: const [
+            Text(
+              'About This App',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Text(
+              'This app is designed to help users learn and understand the Pulaar language. '
+              'Pulaar, also known as Fula, is spoken by the Fula people across West Africa.',
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'How to Use',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Text(
+              'Navigate through the different categories to find common phrases and their English translations. '
+              'Tap on any phrase to see more details.',
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Credits',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Text(
+              'This app was developed by techrisemedia. Special thanks to all contributors who provided the data and resources.',
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Contact Us',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Text(
+              'For any questions or feedback, please contact us at codewithjalloh@gmail.com.',
+              style: TextStyle(fontSize: 18),
+            ),
+          ],
         ),
       ),
-    );
-  }
-
-  Widget _buildSectionTitle(String title, bool isPortrait) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontSize: isPortrait ? 24 : 22,
-        fontWeight: FontWeight.bold,
-      ),
-    );
-  }
-
-  Widget _buildSectionText(String text, bool isPortrait) {
-    return Text(
-      text,
-      style: TextStyle(
-        fontSize: isPortrait ? 18 : 16,
-        height: 1.5,
-      ),
-      textAlign: TextAlign.justify,
     );
   }
 }

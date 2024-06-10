@@ -10,48 +10,32 @@ class QuizSectionScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Select Quiz Section'),
       ),
-      drawer: CustomDrawer(
-        favoritePhrases: [],
-      ),
-      body: OrientationBuilder(
-        builder: (context, orientation) {
-          final isPortrait = orientation == Orientation.portrait;
-          return ListView.builder(
-            itemCount: sections.length,
-            itemBuilder: (context, index) {
-              final section = sections[index];
-              return Column(
-                children: [
-                  ListTile(
-                    leading: Icon(section.icon, size: isPortrait ? 50 : 40),
-                    title: Text(
-                      section.title,
-                      style: TextStyle(
-                        fontSize: isPortrait ? 25 : 20,
+      drawer: CustomDrawer(),
+      body: ListView.builder(
+        itemCount: sections.length,
+        itemBuilder: (context, index) {
+          final section = sections[index];
+          return Column(
+            children: [
+              ListTile(
+                leading: Icon(section.icon, size: 50),
+                title: Text(section.title, style: TextStyle(fontSize: 25)),
+                subtitle:
+                    Text(section.subtitle, style: TextStyle(fontSize: 20)),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QuizScreen(
+                        title: section.title + ' Quiz',
+                        filename: section.filename,
                       ),
                     ),
-                    subtitle: Text(
-                      section.subtitle,
-                      style: TextStyle(
-                        fontSize: isPortrait ? 20 : 18,
-                      ),
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => QuizScreen(
-                            title: section.title + ' Quiz',
-                            filename: section.filename,
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                  Divider(),
-                ],
-              );
-            },
+                  );
+                },
+              ),
+              Divider(),
+            ],
           );
         },
       ),

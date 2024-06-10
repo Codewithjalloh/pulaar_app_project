@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:pulaar/screens/home_page.dart';
-import 'package:pulaar/screens/fulani_history_screen.dart';
-import 'package:pulaar/screens/information_screen.dart';
-import 'package:pulaar/screens/quiz_section_screen.dart';
-import 'package:pulaar/screens/currency_converter_screen.dart';
-import 'package:pulaar/screens/african_countries_screen.dart';
-import 'package:pulaar/screens/must_know_words_screen.dart';
-import 'package:pulaar/screens/login_screen.dart';
-import 'package:pulaar/screens/profile_screen.dart';
-import 'package:pulaar/screens/chat_screen.dart';
-import 'firebase_options.dart';
+import 'package:provider/provider.dart';
+import 'services/favorite_phrases_provider.dart';
+import 'screens/home_page_screen.dart';
+import 'screens/fulani_history_screen.dart';
+import 'screens/information_screen.dart';
+import 'screens/quiz_section_screen.dart';
+import 'screens/currency_converter_screen.dart';
+import 'screens/african_countries_screen.dart';
+import 'screens/must_know_words_screen.dart';
+import 'screens/favorites_screen.dart';
+import 'screens/login_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => FavoritePhrasesProvider(),
+      child: MyApp(),
+    ),
   );
-  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -30,16 +30,15 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomePage(),
+        '/': (context) => HomePageScreen(),
         '/fulani_history': (context) => FulaniHistoryScreen(),
         '/information': (context) => InformationScreen(),
         '/quiz_section': (context) => QuizSectionScreen(),
         '/currency_converter': (context) => CurrencyConverterScreen(),
         '/african_countries': (context) => AfricanCountriesScreen(),
         '/must_know_words': (context) => MustKnowWordsScreen(),
+        '/favorites': (context) => FavoritesScreen(),
         '/login': (context) => LoginScreen(),
-        '/profile': (context) => ProfileScreen(),
-        '/chat': (context) => ChatScreen(),
       },
     );
   }
