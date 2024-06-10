@@ -8,6 +8,8 @@ import '../screens/african_countries_screen.dart';
 import '../screens/must_know_words_screen.dart';
 import '../screens/favorites_screen.dart';
 import '../screens/login_screen.dart';
+import '../screens/chat_screen.dart';
+import '../screens/profile_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -94,15 +96,61 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/must_know_words');
             },
           ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.login,
-            text: 'Login',
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, '/login');
-            },
-          ),
+          if (user != null) ...[
+            _buildDrawerItem(
+              context,
+              icon: Icons.chat,
+              text: 'Chat',
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatScreen(),
+                  ),
+                );
+              },
+            ),
+            _buildDrawerItem(
+              context,
+              icon: Icons.account_circle,
+              text: 'Profile',
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(),
+                  ),
+                );
+              },
+            ),
+            _buildDrawerItem(
+              context,
+              icon: Icons.logout,
+              text: 'Logout',
+              onTap: () {
+                FirebaseAuth.instance.signOut();
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/');
+              },
+            ),
+          ] else ...[
+            _buildDrawerItem(
+              context,
+              icon: Icons.login,
+              text: 'Login',
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginScreen(),
+                  ),
+                );
+              },
+            ),
+          ],
           _buildDrawerItem(
             context,
             icon: Icons.info,

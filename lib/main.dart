@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'services/favorite_phrases_provider.dart';
 import 'screens/home_page_screen.dart';
@@ -11,7 +12,9 @@ import 'screens/must_know_words_screen.dart';
 import 'screens/favorites_screen.dart';
 import 'screens/login_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(); // Ensure Firebase is initialized
   runApp(
     ChangeNotifierProvider(
       create: (context) => FavoritePhrasesProvider(),

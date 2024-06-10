@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/phrase.dart';
+import 'package:pulaar/model/phrase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 

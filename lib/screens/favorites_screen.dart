@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../services//favorite_phrases_provider.dart';
+import '../services/favorite_phrases_provider.dart';
 import '../components/custom_drawer.dart';
 
 class FavoritesScreen extends StatelessWidget {
