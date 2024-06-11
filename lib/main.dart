@@ -9,15 +9,18 @@ import 'screens/quiz_section_screen.dart';
 import 'screens/currency_converter_screen.dart';
 import 'screens/african_countries_screen.dart';
 import 'screens/must_know_words_screen.dart';
-import 'screens/favorites_screen.dart';
 import 'screens/login_screen.dart';
+import 'screens/chat_screen.dart';
+import 'screens/profile_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // Ensure Firebase is initialized
+  await Firebase.initializeApp();
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => FavoritePhrasesProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => FavoritePhrasesProvider()),
+      ],
       child: MyApp(),
     ),
   );
@@ -40,8 +43,9 @@ class MyApp extends StatelessWidget {
         '/currency_converter': (context) => CurrencyConverterScreen(),
         '/african_countries': (context) => AfricanCountriesScreen(),
         '/must_know_words': (context) => MustKnowWordsScreen(),
-        '/favorites': (context) => FavoritesScreen(),
         '/login': (context) => LoginScreen(),
+        '/profile': (context) => ProfileScreen(),
+        '/chat': (context) => ChatScreen(),
       },
     );
   }

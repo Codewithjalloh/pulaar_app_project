@@ -5,10 +5,6 @@ import '../components/custom_drawer.dart';
 import '../model/phrase.dart';
 import '../model/section.dart';
 import '../screens/category_screen.dart';
-import '../screens/chat_screen.dart';
-import '../screens/profile_screen.dart';
-import 'package:provider/provider.dart';
-import '../services//favorite_phrases_provider.dart';
 
 class HomePageScreen extends StatefulWidget {
   @override
@@ -18,17 +14,18 @@ class HomePageScreen extends StatefulWidget {
 class _HomePageScreenState extends State<HomePageScreen> {
   int _selectedIndex = 0;
 
-  static List<Widget> _widgetOptions = <Widget>[
-    HomePageContent(),
-    ChatScreen(),
-    ProfileScreen(),
-  ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
+
+  static List<Widget> _widgetOptions = <Widget>[
+    HomePageContent(),
+    // Use placeholders or widgets like ChatScreen and ProfileScreen if they exist
+    Container(),
+    Container(),
+  ];
 
   @override
   Widget build(BuildContext context) {

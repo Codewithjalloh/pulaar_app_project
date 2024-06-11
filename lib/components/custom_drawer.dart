@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
+import '../services/favorite_phrases_provider.dart';
 import '../screens/fulani_history_screen.dart';
 import '../screens/information_screen.dart';
 import '../screens/quiz_section_screen.dart';
 import '../screens/currency_converter_screen.dart';
 import '../screens/african_countries_screen.dart';
 import '../screens/must_know_words_screen.dart';
-import '../screens/favorites_screen.dart';
 import '../screens/login_screen.dart';
+import '../screens/favorites_screen.dart';
 import '../screens/chat_screen.dart';
 import '../screens/profile_screen.dart';
 
@@ -48,7 +50,12 @@ class CustomDrawer extends StatelessWidget {
             text: 'Quiz',
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/quiz_section');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => QuizSectionScreen(),
+                ),
+              );
             },
           ),
           _buildDrawerItem(
@@ -57,7 +64,12 @@ class CustomDrawer extends StatelessWidget {
             text: 'Favorites',
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/favorites');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FavoritesScreen(),
+                ),
+              );
             },
           ),
           _buildDrawerItem(
@@ -66,7 +78,12 @@ class CustomDrawer extends StatelessWidget {
             text: 'Fulani History',
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/fulani_history');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FulaniHistoryScreen(),
+                ),
+              );
             },
           ),
           _buildDrawerItem(
@@ -75,7 +92,12 @@ class CustomDrawer extends StatelessWidget {
             text: 'Currency Converter',
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/currency_converter');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CurrencyConverterScreen(),
+                ),
+              );
             },
           ),
           _buildDrawerItem(
@@ -84,7 +106,12 @@ class CustomDrawer extends StatelessWidget {
             text: 'African Countries',
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/african_countries');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AfricanCountriesScreen(),
+                ),
+              );
             },
           ),
           _buildDrawerItem(
@@ -93,73 +120,48 @@ class CustomDrawer extends StatelessWidget {
             text: 'Must Know 100 Words',
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/must_know_words');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MustKnowWordsScreen(),
+                ),
+              );
             },
           ),
-          if (user != null) ...[
-            _buildDrawerItem(
-              context,
-              icon: Icons.chat,
-              text: 'Chat',
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ChatScreen(),
-                  ),
-                );
-              },
-            ),
-            _buildDrawerItem(
-              context,
-              icon: Icons.account_circle,
-              text: 'Profile',
-              onTap: () {
-                Navigator.pop(context);
+          _buildDrawerItem(
+            context,
+            icon: user != null ? Icons.account_circle : Icons.login,
+            text: user != null ? 'Profile' : 'Login',
+            onTap: () {
+              Navigator.pop(context);
+              if (user != null) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => ProfileScreen(),
                   ),
                 );
-              },
-            ),
-            _buildDrawerItem(
-              context,
-              icon: Icons.logout,
-              text: 'Logout',
-              onTap: () {
-                FirebaseAuth.instance.signOut();
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/');
-              },
-            ),
-          ] else ...[
-            _buildDrawerItem(
-              context,
-              icon: Icons.login,
-              text: 'Login',
-              onTap: () {
-                Navigator.pop(context);
+              } else {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => LoginScreen(),
                   ),
                 );
-              },
-            ),
-          ],
-          _buildDrawerItem(
-            context,
-            icon: Icons.info,
-            text: 'Info',
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, '/information');
+              }
             },
           ),
+          if (user != null)
+            _buildDrawerItem(
+              context,
+              icon: Icons.logout,
+              text: 'Logout',
+              onTap: () async {
+                await FirebaseAuth.instance.signOut();
+                Navigator.pop(context);
+                Navigator.pushReplacementNamed(context, '/');
+              },
+            ),
         ],
       ),
     );
