@@ -91,25 +91,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       return Container(); // Empty container when user is not logged in
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile'),
-        actions: [
-          if (!_isEditing)
-            IconButton(
-              icon: Icon(Icons.edit),
-              onPressed: () {
-                setState(() {
-                  _isEditing = true;
-                });
-              },
-            ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: _isEditing ? _buildEditProfileForm() : _buildProfileView(),
-      ),
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: _isEditing ? _buildEditProfileForm() : _buildProfileView(),
     );
   }
 

@@ -1,10 +1,10 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../components/custom_drawer.dart';
-import '../model/phrase.dart';
+import 'chat_screen.dart';
+import 'profile_screen.dart';
+import 'category_screen.dart';
 import '../model/section.dart';
-import '../screens/category_screen.dart';
 
 class HomePageScreen extends StatefulWidget {
   @override
@@ -13,19 +13,52 @@ class HomePageScreen extends StatefulWidget {
 
 class _HomePageScreenState extends State<HomePageScreen> {
   int _selectedIndex = 0;
+  final User? currentUser = FirebaseAuth.instance.currentUser;
+
+  static List<Widget> _widgetOptions = <Widget>[
+    HomePageContent(),
+    ChatScreen(),
+    ProfileScreen(),
+  ];
 
   void _onItemTapped(int index) {
+    if (index == 1 || index == 2) {
+      if (currentUser == null) {
+        _showLoginPrompt(context);
+        return;
+      }
+    }
     setState(() {
       _selectedIndex = index;
     });
   }
 
-  static List<Widget> _widgetOptions = <Widget>[
-    HomePageContent(),
-    // Use placeholders or widgets like ChatScreen and ProfileScreen if they exist
-    Container(),
-    Container(),
-  ];
+  void _showLoginPrompt(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Login Required'),
+          content: Text('Please log in to access this feature.'),
+          actions: [
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: Text('Login'),
+              onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.pushNamed(context, '/login');
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
