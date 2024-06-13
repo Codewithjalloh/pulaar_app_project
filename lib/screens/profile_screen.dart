@@ -5,7 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'dart:io';
 import 'login_screen.dart';
-import 'home_page_screen.dart'; // Make sure you have this import
+import 'home_page_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -91,9 +91,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
       return Container(); // Empty container when user is not logged in
     }
 
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: _isEditing ? _buildEditProfileForm() : _buildProfileView(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+        actions: [
+          IconButton(
+            icon: Icon(_isEditing ? Icons.check : Icons.edit),
+            onPressed: () {
+              if (_isEditing) {
+                _updateProfile();
+              } else {
+                setState(() {
+                  _isEditing = true;
+                });
+              }
+            },
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: _isEditing ? _buildEditProfileForm() : _buildProfileView(),
+      ),
     );
   }
 
@@ -174,15 +193,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             controller: _bioController,
             label: 'Bio',
             validator: (value) => value!.isEmpty ? 'Please enter a bio' : null,
-          ),
-          SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: _updateProfile,
-            child: Text('Update Profile'),
-            style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              textStyle: TextStyle(fontSize: 18),
-            ),
           ),
         ],
       ),

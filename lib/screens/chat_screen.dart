@@ -56,65 +56,55 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     if (currentUser == null) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('Chat'),
-        ),
-        body: Center(
-          child: Text('Please log in to access the chat feature.'),
-        ),
+      return Center(
+        child: Text('Please log in to access the chat feature.'),
       );
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Chat'),
-      ),
-      body: StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection('users').snapshots(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
-          }
-          if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          }
+    return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance.collection('users').snapshots(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicator());
+        }
+        if (snapshot.hasError) {
+          return Center(child: Text('Error: ${snapshot.error}'));
+        }
 
-          final users = snapshot.data?.docs ?? [];
-          return ListView.builder(
-            itemCount: users.length,
-            itemBuilder: (context, index) {
-              final user = users[index].data() as Map<String, dynamic>;
-              final userId = users[index].id;
+        final users = snapshot.data?.docs ?? [];
+        return ListView.builder(
+          itemCount: users.length,
+          itemBuilder: (context, index) {
+            final user = users[index].data() as Map<String, dynamic>;
+            final userId = users[index].id;
 
-              if (userId == currentUser?.uid) {
-                return Container(); // Skip current user
-              }
+            if (userId == currentUser?.uid) {
+              return Container(); // Skip current user
+            }
 
-              return ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: user['profileImageUrl'] != null
-                      ? NetworkImage(user['profileImageUrl'])
-                      : AssetImage('assets/placeholder.png') as ImageProvider,
-                ),
-                title: Text(user['name'] ?? 'No Name'),
-                subtitle: Text(user['email'] ?? 'No Email'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ChatDetailScreen(
-                        chatUserId: userId,
-                        chatUserName: user['name'] ?? 'No Name',
-                      ),
+            return ListTile(
+              leading: CircleAvatar(
+                backgroundImage: user['profileImageUrl'] != null
+                    ? NetworkImage(user['profileImageUrl'])
+                    : AssetImage('assets/placeholder.png') as ImageProvider,
+              ),
+              title: Text(user['name'] ?? 'No Name'),
+              subtitle: Text(user['email'] ?? 'No Email'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatDetailScreen(
+                      chatUserId: userId,
+                      chatUserName: user['name'] ?? 'No Name',
                     ),
-                  );
-                },
-              );
-            },
-          );
-        },
-      ),
+                  ),
+                );
+              },
+            );
+          },
+        );
+      },
     );
   }
 }
