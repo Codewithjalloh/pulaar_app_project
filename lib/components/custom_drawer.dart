@@ -3,13 +3,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import '../services/auth_provider.dart';
 import '../screens/login_screen.dart';
-import '../screens/chat_screen.dart';
-import '../screens/profile_screen.dart';
+import '../screens/fulani_history_screen.dart';
+import '../screens/information_screen.dart';
+import '../screens/quiz_section_screen.dart';
+import '../screens/currency_converter_screen.dart';
+import '../screens/african_countries_screen.dart';
+import '../screens/must_know_words_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    final authProvider = Provider.of<AuthProvider>(context);
 
     return Drawer(
       child: ListView(
@@ -75,6 +79,60 @@ class CustomDrawer extends StatelessWidget {
               },
             ),
           ],
+          _buildDrawerItem(
+            context,
+            icon: Icons.history,
+            text: 'Fulani History',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/fulani_history');
+            },
+          ),
+          _buildDrawerItem(
+            context,
+            icon: Icons.quiz,
+            text: 'Quiz Section',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/quiz_section');
+            },
+          ),
+          _buildDrawerItem(
+            context,
+            icon: Icons.money,
+            text: 'Currency Converter',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/currency_converter');
+            },
+          ),
+          _buildDrawerItem(
+            context,
+            icon: Icons.public,
+            text: 'African Countries',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/african_countries');
+            },
+          ),
+          _buildDrawerItem(
+            context,
+            icon: Icons.language,
+            text: 'Must Know Words',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/must_know_words');
+            },
+          ),
+          _buildDrawerItem(
+            context,
+            icon: Icons.info,
+            text: 'Information',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/information');
+            },
+          ),
         ],
       ),
     );

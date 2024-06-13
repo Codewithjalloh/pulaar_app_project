@@ -19,8 +19,8 @@ class _HomePageScreenState extends State<HomePageScreen> {
 
   static List<Widget> _widgetOptions = <Widget>[
     HomePageContent(),
-    ChatScreen(),
-    ProfileScreen(),
+    ChatPageWrapper(),
+    ProfilePageWrapper(),
   ];
 
   @override
@@ -102,6 +102,38 @@ class HomePageContent extends StatelessWidget {
           },
         ),
       ],
+    );
+  }
+}
+
+class ChatPageWrapper extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Chat'),
+      ),
+      body: ChatScreen(),
+    );
+  }
+}
+
+class ProfilePageWrapper extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {
+              // Implement edit profile functionality here
+            },
+          ),
+        ],
+      ),
+      body: ProfileScreen(),
     );
   }
 }
