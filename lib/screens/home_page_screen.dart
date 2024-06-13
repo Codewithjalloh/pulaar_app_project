@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../components/custom_drawer.dart';
+import '../services/favorite_phrases_provider.dart';
+import '../data/sections.dart';
+import '../model/section.dart';
 import 'chat_screen.dart';
 import 'profile_screen.dart';
+import 'phrase_detail_screen.dart';
 
 class HomePageScreen extends StatefulWidget {
   @override
@@ -57,51 +62,43 @@ class _HomePageScreenState extends State<HomePageScreen> {
 class HomePageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        ListTile(
-          leading: Icon(Icons.history),
-          title: Text('Fulani History'),
-          onTap: () {
-            Navigator.pushNamed(context, '/fulani_history');
-          },
-        ),
-        ListTile(
-          leading: Icon(Icons.quiz),
-          title: Text('Quiz Section'),
-          onTap: () {
-            Navigator.pushNamed(context, '/quiz_section');
-          },
-        ),
-        ListTile(
-          leading: Icon(Icons.money),
-          title: Text('Currency Converter'),
-          onTap: () {
-            Navigator.pushNamed(context, '/currency_converter');
-          },
-        ),
-        ListTile(
-          leading: Icon(Icons.public),
-          title: Text('African Countries'),
-          onTap: () {
-            Navigator.pushNamed(context, '/african_countries');
-          },
-        ),
-        ListTile(
-          leading: Icon(Icons.language),
-          title: Text('Must Know Words'),
-          onTap: () {
-            Navigator.pushNamed(context, '/must_know_words');
-          },
-        ),
-        ListTile(
-          leading: Icon(Icons.info),
-          title: Text('Information'),
-          onTap: () {
-            Navigator.pushNamed(context, '/information');
-          },
-        ),
-      ],
+    final favoritePhrasesProvider =
+        Provider.of<FavoritePhrasesProvider>(context);
+
+    return ListView.builder(
+      itemCount: sections.length,
+      itemBuilder: (context, index) {
+        final section = sections[index];
+        return ExpansionTile(
+          leading: Icon(section.icon, size: 40),
+          title: Text(section.title, style: TextStyle(fontSize: 22)),
+          subtitle: Text(section.subtitle, style: TextStyle(fontSize: 18)),
+          children: section.phrases.map((phrase) {
+            final isFavorite = favoritePhrasesProvider.isFavorite(phrase);
+            return ListTile(
+              title: Text(phrase.english),
+              subtitle: Text(phrase.pulaar),
+              trailing: IconButton(
+                icon: Icon(
+                  isFavorite ? Icons.favorite : Icons.favorite_border,
+                  color: isFavorite ? Colors.red : null,
+                ),
+                onPressed: () {
+                  favoritePhrasesProvider.toggleFavorite(phrase);
+                },
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PhraseDetailScreen(phrase: phrase),
+                  ),
+                );
+              },
+            );
+          }).toList(),
+        );
+      },
     );
   }
 }
