@@ -124,14 +124,6 @@ class ProfilePageWrapper extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.edit),
-            onPressed: () {
-              // Implement edit profile functionality here
-            },
-          ),
-        ],
       ),
       body: ProfileScreen(),
     );

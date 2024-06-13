@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
-import '../services/auth_provider.dart';
+import '../services/my_auth_provider.dart'; // Updated import
 import '../screens/login_screen.dart';
 import '../screens/fulani_history_screen.dart';
 import '../screens/information_screen.dart';
@@ -13,7 +13,8 @@ import '../screens/must_know_words_screen.dart';
 class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final authProvider = Provider.of<AuthProvider>(context);
+    final authProvider =
+        Provider.of<MyAuthProvider>(context); // Updated class name
 
     return Drawer(
       child: ListView(

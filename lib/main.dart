@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'services/favorite_phrases_provider.dart';
-import 'services/auth_provider.dart';
+import 'services/my_auth_provider.dart'; // Updated import
 import 'screens/home_page_screen.dart';
 import 'screens/fulani_history_screen.dart';
 import 'screens/information_screen.dart';
@@ -21,7 +21,8 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => FavoritePhrasesProvider()),
-        ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(
+            create: (_) => MyAuthProvider()), // Updated class name
       ],
       child: MyApp(),
     ),
