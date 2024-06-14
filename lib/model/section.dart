@@ -5,14 +5,39 @@ class Section {
   final String title;
   final String subtitle;
   final IconData icon;
-  final String filename;
   final List<Phrase> phrases;
 
   Section({
     required this.title,
     required this.subtitle,
     required this.icon,
-    required this.filename,
     required this.phrases,
   });
+
+  factory Section.fromJson(Map<String, dynamic> json) {
+    return Section(
+      title: json['title'],
+      subtitle: json['subtitle'],
+      icon: Icons.accessibility, // Add your logic for icon
+      phrases:
+          (json['phrases'] as List).map((p) => Phrase.fromJson(p)).toList(),
+    );
+  }
+}
+
+class Phrase {
+  final String english;
+  final String pulaar;
+
+  Phrase({
+    required this.english,
+    required this.pulaar,
+  });
+
+  factory Phrase.fromJson(Map<String, dynamic> json) {
+    return Phrase(
+      english: json['english'],
+      pulaar: json['pulaar'],
+    );
+  }
 }

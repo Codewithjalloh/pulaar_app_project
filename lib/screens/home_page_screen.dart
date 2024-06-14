@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../components/custom_drawer.dart';
 import '../services/favorite_phrases_provider.dart';
-import '../data/sections.dart';
+import '../services/section_service.dart';
 import '../model/section.dart';
 import 'chat_screen.dart';
 import 'profile_screen.dart';
@@ -15,6 +15,22 @@ class HomePageScreen extends StatefulWidget {
 
 class _HomePageScreenState extends State<HomePageScreen> {
   int _selectedIndex = 0;
+  List<Section> sections = [];
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadSections();
+  }
+
+  Future<void> _loadSections() async {
+    final sectionService = SectionService();
+    sections = await sectionService.loadSections();
+    setState(() {
+      isLoading = false;
+    });
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -35,7 +51,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
         title: Text("Pulaar"),
       ),
       drawer: CustomDrawer(),
-      body: _widgetOptions.elementAt(_selectedIndex),
+      body: isLoading
+          ? Center(child: CircularProgressIndicator())
+          : _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -64,11 +82,17 @@ class HomePageContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final favoritePhrasesProvider =
         Provider.of<FavoritePhrasesProvider>(context);
+    final homePageState =
+        context.findAncestorStateOfType<_HomePageScreenState>();
+
+    if (homePageState == null || homePageState.isLoading) {
+      return Center(child: CircularProgressIndicator());
+    }
 
     return ListView.builder(
-      itemCount: sections.length,
+      itemCount: homePageState.sections.length,
       itemBuilder: (context, index) {
-        final section = sections[index];
+        final section = homePageState.sections[index];
         return ExpansionTile(
           leading: Icon(section.icon, size: 40),
           title: Text(section.title, style: TextStyle(fontSize: 22)),
