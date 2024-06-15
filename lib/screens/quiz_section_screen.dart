@@ -1,26 +1,11 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../model/section.dart';
-import '../screens/quiz_screen.dart';
+import '../model/phrase.dart';
+import 'quiz_screen.dart';
 
 class QuizSectionScreen extends StatelessWidget {
-  final List<Section> sections = [
-    Section(
-      title: '1. Greetings',
-      subtitle: 'On jaaraama',
-      filename: '1_greetings.json',
-      icon: Icons.pan_tool,
-      phrases: [],
-    ),
-    Section(
-      title: '2. Introductions',
-      subtitle: 'Mido faalaa jommbude maa',
-      filename: '2_introduction.json',
-      icon: Icons.loop,
-      phrases: [],
-    ),
-    // Add more sections as needed
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,16 +17,17 @@ class QuizSectionScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final section = sections[index];
           return ListTile(
-            leading: Icon(section.icon, size: 50),
-            title: Text(section.title, style: TextStyle(fontSize: 25)),
-            subtitle: Text(section.subtitle, style: TextStyle(fontSize: 20)),
-            onTap: () {
+            leading: Icon(section.icon),
+            title: Text(section.title),
+            subtitle: Text(section.subtitle),
+            onTap: () async {
+              final phrases = await _loadPhrases(section.filename);
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => QuizScreen(
                     title: section.title,
-                    filename: section.filename,
+                    phrases: phrases,
                   ),
                 ),
               );
@@ -50,5 +36,11 @@ class QuizSectionScreen extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Future<List<Phrase>> _loadPhrases(String filename) async {
+    final String response = await rootBundle.loadString('assets/$filename');
+    final data = await json.decode(response) as List;
+    return data.map((json) => Phrase.fromJson(json)).toList();
   }
 }
