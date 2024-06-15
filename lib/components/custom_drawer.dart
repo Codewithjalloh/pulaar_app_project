@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../services/my_auth_provider.dart';
-import '../screens/login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../screens/fulani_history_screen.dart';
 import '../screens/information_screen.dart';
 import '../screens/quiz_section_screen.dart';
 import '../screens/currency_converter_screen.dart';
 import '../screens/african_countries_screen.dart';
 import '../screens/must_know_words_screen.dart';
-import '../screens/home_page_screen.dart';
+import '../screens/login_screen.dart';
+import '../screens/profile_screen.dart';
+import '../screens/chat_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final authProvider = Provider.of<MyAuthProvider>(context);
+    final User? user = FirebaseAuth.instance.currentUser;
 
     return Drawer(
       child: ListView(
@@ -41,44 +41,15 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/');
             },
           ),
-          if (authProvider.isLoggedIn) ...[
-            _buildDrawerItem(
-              context,
-              icon: Icons.chat,
-              text: 'Chat',
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/chat');
-              },
-            ),
-            _buildDrawerItem(
-              context,
-              icon: Icons.account_circle,
-              text: 'Profile',
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/profile');
-              },
-            ),
-            _buildDrawerItem(
-              context,
-              icon: Icons.logout,
-              text: 'Logout',
-              onTap: () {
-                authProvider.logout();
-              },
-            ),
-          ] else ...[
-            _buildDrawerItem(
-              context,
-              icon: Icons.login,
-              text: 'Login',
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/login');
-              },
-            ),
-          ],
+          _buildDrawerItem(
+            context,
+            icon: Icons.quiz,
+            text: 'Quiz',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/quiz_section');
+            },
+          ),
           _buildDrawerItem(
             context,
             icon: Icons.history,
@@ -86,15 +57,6 @@ class CustomDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               Navigator.pushNamed(context, '/fulani_history');
-            },
-          ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.quiz,
-            text: 'Quiz Section',
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, '/quiz_section');
             },
           ),
           _buildDrawerItem(
@@ -126,8 +88,34 @@ class CustomDrawer extends StatelessWidget {
           ),
           _buildDrawerItem(
             context,
+            icon: Icons.chat,
+            text: 'Chat',
+            onTap: () {
+              Navigator.pop(context);
+              if (user == null) {
+                _showLoginPrompt(context);
+              } else {
+                Navigator.pushNamed(context, '/chat');
+              }
+            },
+          ),
+          _buildDrawerItem(
+            context,
+            icon: Icons.account_circle,
+            text: 'Profile',
+            onTap: () {
+              Navigator.pop(context);
+              if (user == null) {
+                _showLoginPrompt(context);
+              } else {
+                Navigator.pushNamed(context, '/profile');
+              }
+            },
+          ),
+          _buildDrawerItem(
+            context,
             icon: Icons.info,
-            text: 'Information',
+            text: 'Info',
             onTap: () {
               Navigator.pop(context);
               Navigator.pushNamed(context, '/information');
@@ -138,12 +126,37 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildDrawerItem(
-    BuildContext context, {
-    required IconData icon,
-    required String text,
-    required VoidCallback onTap,
-  }) {
+  void _showLoginPrompt(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Login Required'),
+          content: Text('Please log in to access this feature.'),
+          actions: [
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: Text('Login'),
+              onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.pushNamed(context, '/login');
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildDrawerItem(BuildContext context,
+      {required IconData icon,
+      required String text,
+      required VoidCallback onTap}) {
     return ListTile(
       leading: Icon(icon, size: 30),
       title: Text(
