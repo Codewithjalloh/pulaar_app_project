@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
+import '../services/my_auth_provider.dart'; // Ensure this is imported
 import '../screens/fulani_history_screen.dart';
 import '../screens/information_screen.dart';
 import '../screens/quiz_section_screen.dart';
@@ -13,6 +15,8 @@ import '../screens/chat_screen.dart';
 class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final MyAuthProvider authProvider =
+        Provider.of<MyAuthProvider>(context); // Ensure you get the provider
     final User? user = FirebaseAuth.instance.currentUser;
 
     return Drawer(
