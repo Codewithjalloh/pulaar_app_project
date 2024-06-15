@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../components/custom_drawer.dart';
-import '../services/favorite_phrases_provider.dart';
-import '../services/section_service.dart';
-import '../model/section.dart';
-import 'chat_screen.dart';
-import 'profile_screen.dart';
-import 'phrase_detail_screen.dart';
+import '../model//sections.dart';
+import 'category_screen.dart';
+import '../screens/profile_screen.dart';
+import '../screens/chat_screen.dart';
 
 class HomePageScreen extends StatefulWidget {
   @override
@@ -15,22 +12,6 @@ class HomePageScreen extends StatefulWidget {
 
 class _HomePageScreenState extends State<HomePageScreen> {
   int _selectedIndex = 0;
-  List<Section> sections = [];
-  bool isLoading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadSections();
-  }
-
-  Future<void> _loadSections() async {
-    final sectionService = SectionService();
-    sections = await sectionService.loadSections();
-    setState(() {
-      isLoading = false;
-    });
-  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -51,9 +32,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
         title: Text("Pulaar"),
       ),
       drawer: CustomDrawer(),
-      body: isLoading
-          ? Center(child: CircularProgressIndicator())
-          : _widgetOptions.elementAt(_selectedIndex),
+      body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -80,47 +59,30 @@ class _HomePageScreenState extends State<HomePageScreen> {
 class HomePageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final favoritePhrasesProvider =
-        Provider.of<FavoritePhrasesProvider>(context);
-    final homePageState =
-        context.findAncestorStateOfType<_HomePageScreenState>();
-
-    if (homePageState == null || homePageState.isLoading) {
-      return Center(child: CircularProgressIndicator());
-    }
-
     return ListView.builder(
-      itemCount: homePageState.sections.length,
+      itemCount: sections.length,
       itemBuilder: (context, index) {
-        final section = homePageState.sections[index];
-        return ExpansionTile(
-          leading: Icon(section.icon, size: 40),
-          title: Text(section.title, style: TextStyle(fontSize: 22)),
-          subtitle: Text(section.subtitle, style: TextStyle(fontSize: 18)),
-          children: section.phrases.map((phrase) {
-            final isFavorite = favoritePhrasesProvider.isFavorite(phrase);
-            return ListTile(
-              title: Text(phrase.english),
-              subtitle: Text(phrase.pulaar),
-              trailing: IconButton(
-                icon: Icon(
-                  isFavorite ? Icons.favorite : Icons.favorite_border,
-                  color: isFavorite ? Colors.red : null,
-                ),
-                onPressed: () {
-                  favoritePhrasesProvider.toggleFavorite(phrase);
-                },
-              ),
+        final section = sections[index];
+        return Column(
+          children: [
+            ListTile(
+              leading: Icon(section.icon, size: 50),
+              title: Text(section.title, style: TextStyle(fontSize: 25)),
+              subtitle: Text(section.subtitle, style: TextStyle(fontSize: 20)),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PhraseDetailScreen(phrase: phrase),
+                    builder: (context) => CategoryScreen(
+                      title: section.title,
+                      filename: section.filename,
+                    ),
                   ),
                 );
               },
-            );
-          }).toList(),
+            ),
+            Divider(),
+          ],
         );
       },
     );
@@ -145,6 +107,14 @@ class ProfilePageWrapper extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {
+              // Navigate to edit profile screen or enable edit mode
+            },
+          ),
+        ],
       ),
       body: ProfileScreen(),
     );
