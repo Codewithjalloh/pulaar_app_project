@@ -21,10 +21,10 @@ class PhraseDetailScreen extends StatelessWidget {
               phrase.english,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Text(
               phrase.pulaar,
-              style: TextStyle(fontSize: 24, color: Colors.blue),
+              style: TextStyle(fontSize: 20, color: Colors.blue),
             ),
           ],
         ),

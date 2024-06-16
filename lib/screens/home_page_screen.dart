@@ -1,9 +1,7 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import '../components/custom_drawer.dart';
+import '../model/sections.dart'; // Ensure sections are loaded from the correct file
 import 'category_screen.dart';
-import '../model/section.dart';
 
 class HomePageScreen extends StatefulWidget {
   @override
@@ -18,35 +16,40 @@ class _HomePageScreenState extends State<HomePageScreen> {
         title: Text("Pulaar"),
       ),
       drawer: CustomDrawer(),
-      body: HomePageContent(),
-    );
-  }
-}
-
-class HomePageContent extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: sections.length,
-      itemBuilder: (context, index) {
-        final section = sections[index];
-        return ListTile(
-          leading: Icon(section.icon, size: 50),
-          title: Text(section.title, style: TextStyle(fontSize: 25)),
-          subtitle: Text(section.subtitle, style: TextStyle(fontSize: 20)),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => CategoryScreen(
-                  title: section.title,
-                  filename: section.filename,
-                ),
+      body: ListView.builder(
+        itemCount: sections.length,
+        itemBuilder: (context, index) {
+          final section = sections[index];
+          return Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            child: ListTile(
+              leading: Icon(section.icon, size: 45), // Larger icon
+              title: Text(
+                section.title,
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold), // Larger title text
               ),
-            );
-          },
-        );
-      },
+              subtitle: Text(
+                section.subtitle,
+                style: TextStyle(fontSize: 20), // Larger subtitle text
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CategoryScreen(
+                      title: section.title,
+                      filename: section.filename,
+                    ),
+                  ),
+                );
+              },
+            ),
+          );
+        },
+      ),
     );
   }
 }

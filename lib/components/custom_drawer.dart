@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import '../screens/fulani_history_screen.dart';
-import '../screens/information_screen.dart';
-import '../screens/quiz_section_screen.dart';
-import '../screens/currency_converter_screen.dart';
-import '../screens/african_countries_screen.dart';
-import '../screens/must_know_words_screen.dart';
-import '../screens/login_screen.dart';
+import 'package:provider/provider.dart';
+import '../services/my_auth_provider.dart';
+import '../screens/favorites_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final User? user = FirebaseAuth.instance.currentUser;
+    final authProvider = Provider.of<MyAuthProvider>(context);
+    final user = authProvider.user;
 
     return Drawer(
       child: ListView(
@@ -41,20 +37,38 @@ class CustomDrawer extends StatelessWidget {
           ),
           _buildDrawerItem(
             context,
-            icon: Icons.quiz,
-            text: 'Quiz',
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, '/quiz_section');
-            },
-          ),
-          _buildDrawerItem(
-            context,
             icon: Icons.history,
             text: 'Fulani History',
             onTap: () {
               Navigator.pop(context);
               Navigator.pushNamed(context, '/fulani_history');
+            },
+          ),
+          _buildDrawerItem(
+            context,
+            icon: Icons.favorite,
+            text: 'Favorites',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/favorites');
+            },
+          ),
+          _buildDrawerItem(
+            context,
+            icon: Icons.info,
+            text: 'Information',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/information');
+            },
+          ),
+          _buildDrawerItem(
+            context,
+            icon: Icons.quiz,
+            text: 'Quiz Section',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/quiz_section');
             },
           ),
           _buildDrawerItem(
@@ -84,25 +98,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/must_know_words');
             },
           ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.info,
-            text: 'Information',
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, '/information');
-            },
-          ),
-          if (user == null)
-            _buildDrawerItem(
-              context,
-              icon: Icons.login,
-              text: 'Login',
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/login');
-              },
-            ),
+          // Add other drawer items here if needed
         ],
       ),
     );
