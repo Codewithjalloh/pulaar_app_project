@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'services/favorite_phrases_provider.dart';
 import 'screens/home_page_screen.dart';
 import 'screens/fulani_history_screen.dart';
@@ -10,6 +10,8 @@ import 'screens/currency_converter_screen.dart';
 import 'screens/african_countries_screen.dart';
 import 'screens/must_know_words_screen.dart';
 import 'screens/login_screen.dart';
+import 'screens/profile_screen.dart';
+import 'screens/chat_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,6 +44,8 @@ class MyApp extends StatelessWidget {
         '/african_countries': (context) => AfricanCountriesScreen(),
         '/must_know_words': (context) => MustKnowWordsScreen(),
         '/login': (context) => LoginScreen(),
+        '/profile': (context) => ProfileScreen(),
+        '/chat': (context) => ChatScreen(),
       },
     );
   }

@@ -4,32 +4,15 @@ import '../model/section.dart';
 import '../model/phrase.dart';
 
 class SectionService {
-  Future<List<Section>> loadSections() async {
-    final sections = <Section>[];
-    final filenames = [
-      'assets/1_greetings.json',
-      'assets/2_introduction.json',
-      'assets/3_family.json',
-      'assets/4_places_things.json',
-      'assets/5_food.json',
-      'assets/6_body.json',
-      'assets/7_shopping.json',
-      'assets/8_travel_and_direction.json',
-      'assets/9_daily_activities.json',
-      'assets/10_ceremonies.json',
-      'assets/11_fable.json',
-      'assets/12_useful_advice.json',
-      'assets/13_oral_history.json',
-      'assets/14_stative_verbs.json',
-      'assets/15_active_verbs.json',
-    ];
+  static Future<List<Section>> loadSections() async {
+    final String response = await rootBundle.loadString('assets/sections.json');
+    final data = await json.decode(response) as List;
+    return data.map((section) => Section.fromJson(section)).toList();
+  }
 
-    for (final filename in filenames) {
-      final data = await rootBundle.loadString(filename);
-      final jsonResult = json.decode(data);
-      sections.add(Section.fromJson(jsonResult));
-    }
-
-    return sections;
+  static Future<List<Phrase>> loadPhrases(String filename) async {
+    final String response = await rootBundle.loadString(filename);
+    final data = await json.decode(response) as List;
+    return data.map((phrase) => Phrase.fromJson(phrase)).toList();
   }
 }

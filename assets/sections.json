@@ -1,0 +1,92 @@
+[
+  {
+    "title": "1. Greetings",
+    "subtitle": "On jaaraama",
+    "filename": "assets/1_greetings.json",
+    "icon": "0xe8e5"
+  },
+  {
+    "title": "2. Introductions",
+    "subtitle": "Mido faalaa jommbude maa",
+    "filename": "assets/2_introduction.json",
+    "icon": "0xe5d3"
+  },
+  {
+    "title": "3. Family",
+    "subtitle": "Ko baaba an nii",
+    "filename": "assets/3_family.json",
+    "icon": "0xe87c"
+  },
+  {
+    "title": "4. Places & Things",
+    "subtitle": "Ko honno dun innetee e pular?",
+    "filename": "assets/4_places_things.json",
+    "icon": "0xe55f"
+  },
+  {
+    "title": "5. Foods",
+    "subtitle": "Beydu seeda",
+    "filename": "assets/5_food.json",
+    "icon": "0xe569"
+  },
+  {
+    "title": "6. Body",
+    "subtitle": "Himo mari hakkil",
+    "filename": "assets/6_body.json",
+    "icon": "0xe557"
+  },
+  {
+    "title": "7. Shopping",
+    "subtitle": "Mido mari pompiteeri",
+    "filename": "assets/7_shopping.json",
+    "icon": "0xe8cc"
+  },
+  {
+    "title": "8. Travel & Directions",
+    "subtitle": "Henndu no wadi",
+    "filename": "assets/8_travel_and_direction.json",
+    "icon": "0xe5c8"
+  },
+  {
+    "title": "9. Daily Activities",
+    "subtitle": "Huunde kala e saa’i mum",
+    "filename": "assets/9_daily_activities.json",
+    "icon": "0xe7f4"
+  },
+  {
+    "title": "10. Ceremonies",
+    "subtitle": "Mi yahay nannde goo",
+    "filename": "assets/10_ceremonies.json",
+    "icon": "0xeab1"
+  },
+  {
+    "title": "11. Fable",
+    "subtitle": "Mi sikkuno ko samakala",
+    "filename": "assets/11_fable.json",
+    "icon": "0xe7fb"
+  },
+  {
+    "title": "12. Useful Advice",
+    "subtitle": "haray himo janngude",
+    "filename": "assets/12_useful_advice.json",
+    "icon": "0xe3d8"
+  },
+  {
+    "title": "13. Oral History",
+    "subtitle": "Fodde ko o hulbini",
+    "filename": "assets/13_oral_history.json",
+    "icon": "0xe55a"
+  },
+  {
+    "title": "14. Stative Verbs",
+    "subtitle": "Ko hommbo daaninoo?",
+    "filename": "assets/14_stative_verbs.json",
+    "icon": "0xe14e"
+  },
+  {
+    "title": "15. Active Verbs",
+    "subtitle": "Ko ka suudu o loototonoo",
+    "filename": "assets/15_active_verbs.json",
+    "icon": "0xe8d5"
+  }
+]

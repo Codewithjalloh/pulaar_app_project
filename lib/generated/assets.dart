@@ -25,5 +25,6 @@ class Assets {
   static const String assetsPlaceholder = 'assets/placeholder.png';
   static const String assetsPoliteWords = 'assets/polite_words.json';
   static const String assetsSeasons = 'assets/seasons.json';
+  static const String assetsSections = 'assets/sections.json';
   static const String pulaarAssetsMustKnowWords = 'assets/must_know_words.json';
 }

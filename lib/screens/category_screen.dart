@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import '../model/phrase.dart';
 import 'phrase_detail_screen.dart';
 
@@ -24,11 +24,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
   }
 
   Future<void> _loadPhrases() async {
-    final String response =
-        await rootBundle.loadString('assets/${widget.filename}');
+    final String response = await rootBundle.loadString(widget.filename);
     final data = await json.decode(response) as List;
     setState(() {
-      phrases = data.map((json) => Phrase.fromJson(json)).toList();
+      phrases = data.map((phrase) => Phrase.fromJson(phrase)).toList();
     });
   }
 
@@ -45,15 +44,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
           return ListTile(
             title: Text(phrase.english),
             subtitle: Text(phrase.pulaar),
-            trailing: IconButton(
-              icon: Icon(
-                Icons.favorite_border,
-                color: Colors.red,
-              ),
-              onPressed: () {
-                // Handle favorite toggle logic
-              },
-            ),
             onTap: () {
               Navigator.push(
                 context,
