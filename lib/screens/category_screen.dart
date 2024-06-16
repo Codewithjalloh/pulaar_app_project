@@ -41,6 +41,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
+        titleTextStyle: TextStyle(
+          color: Colors.black,
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       body: ListView.builder(
         itemCount: phrases.length,
@@ -48,28 +56,54 @@ class _CategoryScreenState extends State<CategoryScreen> {
           final phrase = phrases[index];
           final isFavorite = favoritePhrasesProvider.isFavorite(phrase);
 
-          return ListTile(
-            title: Text(phrase.english),
-            subtitle: Text(phrase.pulaar),
-            trailing: IconButton(
-              icon: Icon(
-                isFavorite ? Icons.favorite : Icons.favorite_border,
-                color: isFavorite ? Colors.red : null,
+          return Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            child: Card(
+              elevation: 2,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
-              onPressed: () {
-                setState(() {
-                  favoritePhrasesProvider.toggleFavorite(phrase);
-                });
-              },
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PhraseDetailScreen(phrase: phrase),
+              child: ListTile(
+                contentPadding: const EdgeInsets.all(16.0),
+                title: Text(
+                  phrase.english,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
                 ),
-              );
-            },
+                subtitle: Text(
+                  phrase.pulaar,
+                  style: TextStyle(
+                    fontSize: 20, // Increased font size
+                    fontWeight: FontWeight.bold,
+                    color:
+                        Colors.blueAccent, // Changed color to make it stand out
+                  ),
+                ),
+                trailing: IconButton(
+                  icon: Icon(
+                    isFavorite ? Icons.favorite : Icons.favorite_border,
+                    color: isFavorite ? Colors.red : Colors.grey,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      favoritePhrasesProvider.toggleFavorite(phrase);
+                    });
+                  },
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PhraseDetailScreen(phrase: phrase),
+                    ),
+                  );
+                },
+              ),
+            ),
           );
         },
       ),

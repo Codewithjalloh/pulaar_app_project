@@ -11,22 +11,69 @@ class FavoritesScreen extends StatelessWidget {
     final favoritePhrases = favoritePhrasesProvider.favoritePhrases;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Favorite Phrases'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(70.0),
+        child: AppBar(
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.blueAccent, Colors.lightBlueAccent],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+          ),
+          title: Text(
+            'Favorite Phrases',
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          centerTitle: true,
+          elevation: 0,
+        ),
       ),
       body: ListView.builder(
         itemCount: favoritePhrases.length,
         itemBuilder: (context, index) {
           final phrase = favoritePhrases[index];
 
-          return ListTile(
-            title: Text(phrase.english),
-            subtitle: Text(phrase.pulaar),
-            trailing: IconButton(
-              icon: Icon(Icons.favorite, color: Colors.red),
-              onPressed: () {
-                favoritePhrasesProvider.toggleFavorite(phrase);
-              },
+          return Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            child: Card(
+              elevation: 5,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: ListTile(
+                contentPadding: const EdgeInsets.all(16.0),
+                title: Text(
+                  phrase.english,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                ),
+                subtitle: Text(
+                  phrase.pulaar,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey[700],
+                  ),
+                ),
+                trailing: IconButton(
+                  icon: Icon(Icons.favorite, color: Colors.red),
+                  onPressed: () {
+                    favoritePhrasesProvider.toggleFavorite(phrase);
+                  },
+                ),
+              ),
             ),
           );
         },

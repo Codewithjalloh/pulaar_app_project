@@ -20,22 +20,70 @@ class _QuizScreenState extends State<QuizScreen> {
     final phrase = widget.phrases[_currentIndex];
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(70.0),
+        child: AppBar(
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.blueAccent, Colors.lightBlueAccent],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+          ),
+          title: Text(
+            widget.title,
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          centerTitle: true,
+          elevation: 0,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Text(
-              phrase.english,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            if (_showAnswer)
-              Text(
-                phrase.pulaar,
-                style: TextStyle(fontSize: 24, color: Colors.blue),
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
+              elevation: 5,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    Text(
+                      phrase.english,
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    if (_showAnswer)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: Text(
+                          phrase.pulaar,
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blueAccent,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
             Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,7 +94,16 @@ class _QuizScreenState extends State<QuizScreen> {
                       _showAnswer = !_showAnswer;
                     });
                   },
-                  child: Text(_showAnswer ? 'Hide Answer' : 'Show Answer'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueAccent,
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    textStyle: TextStyle(fontSize: 18, color: Colors.white),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Text(_showAnswer ? 'Hide Answer' : 'Show Answer',
+                      style: TextStyle(color: Colors.white)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -57,7 +114,18 @@ class _QuizScreenState extends State<QuizScreen> {
                       });
                     }
                   },
-                  child: Text('Next'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueAccent,
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    textStyle: TextStyle(fontSize: 18, color: Colors.white),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Text(
+                    'Next',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ],
             ),

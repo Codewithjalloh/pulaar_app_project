@@ -4,15 +4,36 @@ class FulaniHistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Fulani History'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(70.0),
+        child: AppBar(
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.blueAccent, Colors.lightBlueAccent],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+          ),
+          title: Text(
+            'Fulani History',
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          centerTitle: true,
+          elevation: 0,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: OrientationBuilder(
           builder: (context, orientation) {
             final isPortrait = orientation == Orientation.portrait;
-            final width = MediaQuery.of(context).size.width;
 
             return SingleChildScrollView(
               child: Column(
@@ -23,6 +44,7 @@ class FulaniHistoryScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: isPortrait ? 28 : 24,
                       fontWeight: FontWeight.bold,
+                      color: Colors.blueAccent,
                     ),
                   ),
                   SizedBox(height: 20),
@@ -55,13 +77,28 @@ class FulaniHistoryScreen extends StatelessWidget {
   }
 
   Widget _buildTextSection(String text, bool isPortrait) {
-    return Text(
-      text,
-      style: TextStyle(
-        fontSize: isPortrait ? 18 : 16,
-        height: 1.5,
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 8,
+            offset: Offset(0, 2),
+          ),
+        ],
       ),
-      textAlign: TextAlign.justify,
+      padding: const EdgeInsets.all(16.0),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: isPortrait ? 18 : 16,
+          height: 1.5,
+          color: Colors.black87,
+        ),
+        textAlign: TextAlign.justify,
+      ),
     );
   }
 }

@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../services/my_auth_provider.dart';
 import '../screens/favorites_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final authProvider = Provider.of<MyAuthProvider>(context);
-    final user = authProvider.user;
-
     return Drawer(
-      child: ListView(
+      child: Column(
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              gradient: LinearGradient(
+                colors: [Colors.blueAccent, Colors.lightBlueAccent],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
             ),
             child: Center(
               child: Text(
@@ -22,6 +21,7 @@ class CustomDrawer extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 40,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
@@ -37,29 +37,16 @@ class CustomDrawer extends StatelessWidget {
           ),
           _buildDrawerItem(
             context,
-            icon: Icons.history,
-            text: 'Fulani History',
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, '/fulani_history');
-            },
-          ),
-          _buildDrawerItem(
-            context,
             icon: Icons.favorite,
             text: 'Favorites',
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/favorites');
-            },
-          ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.info,
-            text: 'Information',
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, '/information');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FavoritesScreen(),
+                ),
+              );
             },
           ),
           _buildDrawerItem(
@@ -69,6 +56,15 @@ class CustomDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               Navigator.pushNamed(context, '/quiz_section');
+            },
+          ),
+          _buildDrawerItem(
+            context,
+            icon: Icons.language,
+            text: 'Must Know Words',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/must_know_words');
             },
           ),
           _buildDrawerItem(
@@ -89,16 +85,33 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/african_countries');
             },
           ),
+          Divider(thickness: 1, color: Colors.grey[400]),
           _buildDrawerItem(
             context,
-            icon: Icons.language,
-            text: 'Must Know Words',
+            icon: Icons.history,
+            text: 'Fulani History',
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/must_know_words');
+              Navigator.pushNamed(context, '/fulani_history');
             },
           ),
-          // Add other drawer items here if needed
+          _buildDrawerItem(
+            context,
+            icon: Icons.info,
+            text: 'Information',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/information');
+            },
+          ),
+          Spacer(),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            child: Text(
+              'Version 1.0.0',
+              style: TextStyle(color: Colors.grey[600]),
+            ),
+          ),
         ],
       ),
     );
@@ -109,7 +122,7 @@ class CustomDrawer extends StatelessWidget {
       required String text,
       required VoidCallback onTap}) {
     return ListTile(
-      leading: Icon(icon, size: 30),
+      leading: Icon(icon, size: 30, color: Colors.blueAccent),
       title: Text(
         text,
         style: TextStyle(fontSize: 18),
