@@ -2,10 +2,7 @@ class Phrase {
   final String english;
   final String pulaar;
 
-  Phrase({
-    required this.english,
-    required this.pulaar,
-  });
+  Phrase({required this.english, required this.pulaar});
 
   factory Phrase.fromJson(Map<String, dynamic> json) {
     return Phrase(
