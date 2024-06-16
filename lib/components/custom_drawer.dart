@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:provider/provider.dart';
-import '../services/my_auth_provider.dart'; // Ensure this is imported
 import '../screens/fulani_history_screen.dart';
 import '../screens/information_screen.dart';
 import '../screens/quiz_section_screen.dart';
@@ -9,14 +7,10 @@ import '../screens/currency_converter_screen.dart';
 import '../screens/african_countries_screen.dart';
 import '../screens/must_know_words_screen.dart';
 import '../screens/login_screen.dart';
-import '../screens/profile_screen.dart';
-import '../screens/chat_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final MyAuthProvider authProvider =
-        Provider.of<MyAuthProvider>(context); // Ensure you get the provider
     final User? user = FirebaseAuth.instance.currentUser;
 
     return Drawer(
@@ -92,68 +86,25 @@ class CustomDrawer extends StatelessWidget {
           ),
           _buildDrawerItem(
             context,
-            icon: Icons.chat,
-            text: 'Chat',
-            onTap: () {
-              Navigator.pop(context);
-              if (user == null) {
-                _showLoginPrompt(context);
-              } else {
-                Navigator.pushNamed(context, '/chat');
-              }
-            },
-          ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.account_circle,
-            text: 'Profile',
-            onTap: () {
-              Navigator.pop(context);
-              if (user == null) {
-                _showLoginPrompt(context);
-              } else {
-                Navigator.pushNamed(context, '/profile');
-              }
-            },
-          ),
-          _buildDrawerItem(
-            context,
             icon: Icons.info,
-            text: 'Info',
+            text: 'Information',
             onTap: () {
               Navigator.pop(context);
               Navigator.pushNamed(context, '/information');
             },
           ),
-        ],
-      ),
-    );
-  }
-
-  void _showLoginPrompt(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Login Required'),
-          content: Text('Please log in to access this feature.'),
-          actions: [
-            TextButton(
-              child: Text('Cancel'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            TextButton(
-              child: Text('Login'),
-              onPressed: () {
-                Navigator.of(context).pop();
+          if (user == null)
+            _buildDrawerItem(
+              context,
+              icon: Icons.login,
+              text: 'Login',
+              onTap: () {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/login');
               },
             ),
-          ],
-        );
-      },
+        ],
+      ),
     );
   }
 
