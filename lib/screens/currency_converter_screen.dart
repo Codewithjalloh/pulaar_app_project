@@ -11,7 +11,7 @@ class CurrencyConverterScreen extends StatefulWidget {
 }
 
 class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
-  final String apiKey = "a38daf1d13d81da63bf0fd8e";
+  final String apiKey = "";
   final TextEditingController _amountController = TextEditingController();
   String _fromCurrency = 'USD';
   String _toCurrency = 'EUR';
