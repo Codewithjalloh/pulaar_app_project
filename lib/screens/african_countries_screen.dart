@@ -119,6 +119,7 @@ class _AfricanCountriesScreenState extends State<AfricanCountriesScreen> {
                                 ],
                               ),
                             ),
+                            // button icon added
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.blueAccent,
