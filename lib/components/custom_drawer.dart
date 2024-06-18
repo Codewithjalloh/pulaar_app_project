@@ -95,6 +95,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/fulani_history');
             },
           ),
+          // information item drawer
           _buildDrawerItem(
             context,
             icon: Icons.info,
