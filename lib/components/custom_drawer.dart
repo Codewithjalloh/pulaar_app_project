@@ -86,6 +86,7 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           Divider(thickness: 1, color: Colors.grey[400]),
+          // fulani history drawer
           _buildDrawerItem(
             context,
             icon: Icons.history,
