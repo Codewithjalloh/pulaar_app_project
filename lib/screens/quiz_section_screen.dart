@@ -19,9 +19,9 @@ class QuizSectionScreen extends StatelessWidget {
               ),
             ),
           ),
-          title: Text(
+          title: const Text(
             'Quiz Sections',
-            style: TextStyle(
+            style: const TextStyle(
               fontFamily: 'Montserrat',
               fontSize: 28,
               fontWeight: FontWeight.bold,
@@ -36,7 +36,7 @@ class QuizSectionScreen extends StatelessWidget {
         future: SectionService.loadSections(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return Center(child: const CircularProgressIndicator());
           }
           if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
@@ -86,23 +86,23 @@ class QuizSectionScreen extends StatelessWidget {
                               color: Colors.blueAccent,
                             ),
                           ),
-                          SizedBox(width: 20),
+                          const SizedBox(width: 20),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   section.title,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black87,
                                   ),
                                 ),
-                                SizedBox(height: 5),
+                                const SizedBox(height: 5),
                                 Text(
                                   section.subtitle,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 18,
                                     color: Colors.black54,
                                   ),
@@ -110,7 +110,7 @@ class QuizSectionScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.arrow_forward_ios,
                             color: Colors.blueAccent,
                           ),

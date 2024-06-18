@@ -65,7 +65,7 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Currency Converter'),
+        title: const Text('Currency Converter'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
@@ -82,7 +82,7 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               children: [
                 Expanded(
@@ -112,7 +112,7 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
                     ),
                   ),
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 Expanded(
                   child: InputDecorator(
                     decoration: InputDecoration(
@@ -142,7 +142,7 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _isLoading ? null : _convertCurrency,
               style: ElevatedButton.styleFrom(

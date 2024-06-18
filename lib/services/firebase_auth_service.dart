@@ -18,7 +18,6 @@ class FirebaseAuthService {
       );
       return userCredential.user;
     } on FirebaseAuthException catch (e) {
-      print("Error signing in: $e");
       return null;
     }
   }
@@ -32,7 +31,6 @@ class FirebaseAuthService {
       );
       return userCredential.user;
     } on FirebaseAuthException catch (e) {
-      print("Error registering: $e");
       return null;
     }
   }

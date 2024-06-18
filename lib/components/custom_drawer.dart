@@ -8,14 +8,14 @@ class CustomDrawer extends StatelessWidget {
       child: Column(
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [Colors.blueAccent, Colors.lightBlueAccent],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
             ),
-            child: Center(
+            child: const Center(
               child: Text(
                 'Pulaar',
                 style: TextStyle(
@@ -107,7 +107,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/information');
             },
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
             child: Text(
@@ -128,7 +128,7 @@ class CustomDrawer extends StatelessWidget {
       leading: Icon(icon, size: 30, color: Colors.blueAccent),
       title: Text(
         text,
-        style: TextStyle(fontSize: 18),
+        style: const TextStyle(fontSize: 18),
       ),
       onTap: onTap,
     );
