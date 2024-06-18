@@ -76,6 +76,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/currency_converter');
             },
           ),
+          // african country drawer
           _buildDrawerItem(
             context,
             icon: Icons.public,
