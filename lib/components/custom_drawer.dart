@@ -37,6 +37,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/');
             },
           ),
+          // drawer favorites
           _buildDrawerItem(
             context,
             icon: Icons.favorite,
