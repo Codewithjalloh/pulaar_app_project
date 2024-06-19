@@ -52,6 +52,7 @@ class CustomDrawer extends StatelessWidget {
               );
             },
           ),
+          // quiz drawer
           _buildDrawerItem(
             context,
             icon: Icons.quiz,
