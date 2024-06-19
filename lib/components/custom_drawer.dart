@@ -19,7 +19,7 @@ class CustomDrawer extends StatelessWidget {
             child: const Center(
               child: Text(
                 'Pulaar',
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -27,6 +27,7 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           ),
+          // drawer home and the rest
           _buildDrawerItem(
             context,
             icon: Icons.home,
