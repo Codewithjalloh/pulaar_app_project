@@ -62,6 +62,8 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/quiz_section');
             },
           ),
+
+          // must know words
           _buildDrawerItem(
             context,
             icon: Icons.language,
