@@ -73,6 +73,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/must_know_words');
             },
           ),
+          // currency converter drawer
           _buildDrawerItem(
             context,
             icon: Icons.money,
