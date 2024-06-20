@@ -6,10 +6,10 @@ class InformationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70.0),
+        preferredSize: const Size.fromHeight(70.0),
         child: AppBar(
           flexibleSpace: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [Colors.blueAccent, Colors.lightBlueAccent],
                 begin: Alignment.topCenter,
@@ -19,7 +19,7 @@ class InformationScreen extends StatelessWidget {
           ),
           title: Text(
             'Information',
-            style: TextStyle(
+            style: const TextStyle(
               fontFamily: 'Montserrat',
               fontSize: 28,
               fontWeight: FontWeight.bold,
@@ -54,14 +54,14 @@ class InformationScreen extends StatelessWidget {
               _buildSectionText(
                   'Navigate through the different categories to find common phrases and their English translations. '
                   'Tap on any phrase to see more details.'),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               _buildSectionTitle('Credits'),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               _buildSectionText(
                   'This app was developed by techrisemedia. Special thanks to all contributors who provided the data and resources.'),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               _buildSectionTitle('Contact Us'),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               _buildSectionText(
                   'For any questions or feedback, please contact us at codewithjalloh@gmail.com.'),
             ],
