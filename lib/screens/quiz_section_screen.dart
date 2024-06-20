@@ -8,12 +8,12 @@ class QuizSectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70.0),
+        preferredSize: const Size.fromHeight(70.0),
         child: AppBar(
           flexibleSpace: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.blueAccent, Colors.lightBlueAccent],
+            decoration: const BoxDecoration(
+              gradient: const LinearGradient(
+                colors: const [Colors.blueAccent, Colors.lightBlueAccent],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -36,7 +36,7 @@ class QuizSectionScreen extends StatelessWidget {
         future: SectionService.loadSections(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: const CircularProgressIndicator());
+            return const Center(child: const CircularProgressIndicator());
           }
           if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
