@@ -17,9 +17,9 @@ class InformationScreen extends StatelessWidget {
               ),
             ),
           ),
-          title: Text(
+          title: const Text(
             'Information',
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: 'Montserrat',
               fontSize: 28,
               fontWeight: FontWeight.bold,
@@ -44,13 +44,13 @@ class InformationScreen extends StatelessWidget {
           child: ListView(
             children: [
               _buildSectionTitle('About This App'),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               _buildSectionText(
                   'This app is designed to help users learn and understand the Pulaar language. '
                   'Pulaar, also known as Fula, is spoken by the Fula people across West Africa.'),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               _buildSectionTitle('How to Use'),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               _buildSectionText(
                   'Navigate through the different categories to find common phrases and their English translations. '
                   'Tap on any phrase to see more details.'),
@@ -74,7 +74,7 @@ class InformationScreen extends StatelessWidget {
   Widget _buildSectionTitle(String title) {
     return Text(
       title,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 26,
         fontWeight: FontWeight.bold,
         color: Colors.blueAccent,
@@ -85,7 +85,7 @@ class InformationScreen extends StatelessWidget {
   Widget _buildSectionText(String text) {
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 18,
         height: 1.5,
         color: Colors.black87,
