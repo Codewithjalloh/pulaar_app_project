@@ -8,7 +8,7 @@ class CustomDrawer extends StatelessWidget {
       child: Column(
         children: [
           // Drawer header
-          DrawerHeader(
+          const DrawerHeader(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [Colors.blueAccent, Colors.lightBlueAccent],
