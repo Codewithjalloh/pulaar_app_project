@@ -22,12 +22,14 @@ void main() async {
         ChangeNotifierProvider(create: (_) => FavoritePhrasesProvider()),
         ChangeNotifierProvider(create: (_) => MyAuthProvider()),
       ],
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
