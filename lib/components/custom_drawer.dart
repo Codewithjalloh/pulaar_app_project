@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../screens/favorites_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -9,17 +11,17 @@ class CustomDrawer extends StatelessWidget {
         children: [
           // Drawer header
           const DrawerHeader(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [Colors.blueAccent, Colors.lightBlueAccent],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
             ),
-            child: const Center(
+            child: Center(
               child: Text(
                 'Pulaar',
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -62,7 +64,6 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/quiz_section');
             },
           ),
-
           // must know words
           _buildDrawerItem(
             context,
