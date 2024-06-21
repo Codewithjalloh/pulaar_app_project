@@ -3,6 +3,8 @@ import '../services/country_service.dart';
 import 'country_detail_screen.dart';
 
 class AfricanCountriesScreen extends StatefulWidget {
+  const AfricanCountriesScreen({Key? key}) : super(key: key);
+
   @override
   _AfricanCountriesScreenState createState() => _AfricanCountriesScreenState();
 }
@@ -21,10 +23,10 @@ class _AfricanCountriesScreenState extends State<AfricanCountriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70.0),
+        preferredSize: const Size.fromHeight(70.0),
         child: AppBar(
           flexibleSpace: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [Colors.blueAccent, Colors.lightBlueAccent],
                 begin: Alignment.topCenter,
@@ -32,7 +34,7 @@ class _AfricanCountriesScreenState extends State<AfricanCountriesScreen> {
               ),
             ),
           ),
-          title: Text(
+          title: const Text(
             'African Countries',
             style: TextStyle(
               fontFamily: 'Montserrat',
@@ -49,11 +51,11 @@ class _AfricanCountriesScreenState extends State<AfricanCountriesScreen> {
         future: _countriesFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Center(child: Text('No countries found'));
+            return const Center(child: Text('No countries found'));
           } else {
             final countries = snapshot.data!;
             return ListView.builder(
@@ -91,27 +93,27 @@ class _AfricanCountriesScreenState extends State<AfricanCountriesScreen> {
                                 height: 50,
                                 fit: BoxFit.cover,
                                 errorBuilder: (context, error, stackTrace) {
-                                  return Icon(Icons.flag, size: 50);
+                                  return const Icon(Icons.flag, size: 50);
                                 },
                               ),
                             ),
-                            SizedBox(width: 20),
+                            const SizedBox(width: 20),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     country.name,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black87,
                                     ),
                                   ),
-                                  SizedBox(height: 5),
+                                  const SizedBox(height: 5),
                                   Text(
                                     'Capital: ${country.capital}',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 16,
                                       color: Colors.black54,
                                     ),
@@ -119,8 +121,7 @@ class _AfricanCountriesScreenState extends State<AfricanCountriesScreen> {
                                 ],
                               ),
                             ),
-                            // button icon added
-                            Icon(
+                            const Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.blueAccent,
                             ),
