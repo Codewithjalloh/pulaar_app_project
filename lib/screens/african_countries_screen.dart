@@ -34,6 +34,7 @@ class _AfricanCountriesScreenState extends State<AfricanCountriesScreen> {
               ),
             ),
           ),
+          // add african countries title
           title: const Text(
             'African Countries',
             style: TextStyle(
