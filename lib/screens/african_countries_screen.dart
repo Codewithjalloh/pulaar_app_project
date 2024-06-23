@@ -48,6 +48,7 @@ class _AfricanCountriesScreenState extends State<AfricanCountriesScreen> {
           elevation: 0,
         ),
       ),
+      // return a future builder for the list of countries
       body: FutureBuilder<List<Country>>(
         future: _countriesFuture,
         builder: (context, snapshot) {
