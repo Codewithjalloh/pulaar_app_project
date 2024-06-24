@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Section {
-  final String title;
-  final String subtitle;
-  final IconData icon;
-  final String filename;
+  // Define the properties for the class
+  final String title; // The title of the section
+  final String subtitle; // The subtitle of the section
+  final IconData icon; // The icon representing the section
+  final String
+      filename; // The filename of the JSON file containing the section's data
 
+  // Constructor for initializing the properties
   Section({
     required this.title,
     required this.subtitle,
@@ -13,16 +16,20 @@ class Section {
     required this.filename,
   });
 
+  // Factory constructor for creating a new Section instance from a JSON map
   factory Section.fromJson(Map<String, dynamic> json) {
     return Section(
-      title: json['title'],
-      subtitle: json['subtitle'],
-      icon: IconData(int.parse(json['icon']), fontFamily: 'MaterialIcons'),
-      filename: json['filename'],
+      title: json['title'], // Extract the title from the JSON map
+      subtitle: json['subtitle'], // Extract the subtitle from the JSON map
+      icon: IconData(int.parse(json['icon']),
+          fontFamily:
+              'MaterialIcons'), // Convert the icon from string to IconData
+      filename: json['filename'], // Extract the filename from the JSON map
     );
   }
 }
 
+// Define a list of sections with their respective data
 final List<Section> sections = [
   Section(
     title: '1. Greetings',
