@@ -10,6 +10,7 @@ class CategoryScreen extends StatefulWidget {
   final String title;
   final String filename;
 
+  // Constructor to accept title and filename
   CategoryScreen({required this.title, required this.filename});
 
   @override
@@ -22,9 +23,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
   @override
   void initState() {
     super.initState();
+    // Load phrases when the widget is initialized
     _loadPhrases();
   }
 
+  // Function to load phrases from the JSON file
   Future<void> _loadPhrases() async {
     final String response = await rootBundle.loadString(widget.filename);
     final data = await json.decode(response) as List;
@@ -35,21 +38,24 @@ class _CategoryScreenState extends State<CategoryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Get the instance of FavoritePhrasesProvider from the context
     final favoritePhrasesProvider =
         Provider.of<FavoritePhrasesProvider>(context);
 
     return Scaffold(
+      // Custom AppBar with white background and black text
       appBar: AppBar(
         title: Text(widget.title),
         backgroundColor: Colors.white,
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black),
-        titleTextStyle: TextStyle(
+        iconTheme: const IconThemeData(color: Colors.black),
+        titleTextStyle: const TextStyle(
           color: Colors.black,
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
       ),
+      // ListView to display the phrases
       body: ListView.builder(
         itemCount: phrases.length,
         itemBuilder: (context, index) {
@@ -66,23 +72,26 @@ class _CategoryScreenState extends State<CategoryScreen> {
               ),
               child: ListTile(
                 contentPadding: const EdgeInsets.all(16.0),
+                // Display English phrase
                 title: Text(
                   phrase.english,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   ),
                 ),
+                // Display Pulaar phrase
                 subtitle: Text(
                   phrase.pulaar,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20, // Increased font size
                     fontWeight: FontWeight.bold,
                     color:
                         Colors.blueAccent, // Changed color to make it stand out
                   ),
                 ),
+                // Favorite button
                 trailing: IconButton(
                   icon: Icon(
                     isFavorite ? Icons.favorite : Icons.favorite_border,
@@ -94,6 +103,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     });
                   },
                 ),
+                // Navigate to PhraseDetailScreen on tap
                 onTap: () {
                   Navigator.push(
                     context,
