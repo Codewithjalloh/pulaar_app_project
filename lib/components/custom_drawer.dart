@@ -9,7 +9,7 @@ class CustomDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          // Drawer header
+          // Drawer header with a gradient background
           const DrawerHeader(
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -29,7 +29,7 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           ),
-          // drawer home and the rest
+          // Home drawer item
           _buildDrawerItem(
             context,
             icon: Icons.home,
@@ -39,7 +39,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/');
             },
           ),
-          // drawer favorites
+          // Favorites drawer item
           _buildDrawerItem(
             context,
             icon: Icons.favorite,
@@ -49,12 +49,12 @@ class CustomDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => FavoritesScreen(),
+                  builder: (context) => const FavoritesScreen(),
                 ),
               );
             },
           ),
-          // quiz drawer
+          // Quiz Section drawer item
           _buildDrawerItem(
             context,
             icon: Icons.quiz,
@@ -64,7 +64,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/quiz_section');
             },
           ),
-          // must know words
+          // Must Know Words drawer item
           _buildDrawerItem(
             context,
             icon: Icons.language,
@@ -74,7 +74,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/must_know_words');
             },
           ),
-          // currency converter drawer
+          // Currency Converter drawer item
           _buildDrawerItem(
             context,
             icon: Icons.money,
@@ -84,7 +84,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/currency_converter');
             },
           ),
-          // african country drawer
+          // African Countries drawer item
           _buildDrawerItem(
             context,
             icon: Icons.public,
@@ -94,8 +94,9 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/african_countries');
             },
           ),
+          // Divider to separate sections
           Divider(thickness: 1, color: Colors.grey[400]),
-          // fulani history drawer
+          // Fulani History drawer item
           _buildDrawerItem(
             context,
             icon: Icons.history,
@@ -105,7 +106,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/fulani_history');
             },
           ),
-          // information item drawer
+          // Information drawer item
           _buildDrawerItem(
             context,
             icon: Icons.info,
@@ -115,7 +116,9 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/information');
             },
           ),
+          // Spacer to push the version text to the bottom
           const Spacer(),
+          // App version text
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
             child: Text(
@@ -128,6 +131,7 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 
+  // Method to build each drawer item
   Widget _buildDrawerItem(BuildContext context,
       {required IconData icon,
       required String text,
