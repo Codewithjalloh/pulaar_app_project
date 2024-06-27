@@ -7,7 +7,11 @@ class ChatDetailScreen extends StatefulWidget {
   final String chatUserId;
   final String chatUserName;
 
-  ChatDetailScreen({required this.chatUserId, required this.chatUserName});
+  const ChatDetailScreen({
+    Key? key,
+    required this.chatUserId,
+    required this.chatUserName,
+  }) : super(key: key);
 
   @override
   _ChatDetailScreenState createState() => _ChatDetailScreenState();
@@ -26,6 +30,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
       ),
       body: Column(
         children: [
+          // Expanded widget to show chat messages
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
               stream: FirebaseFirestore.instance
@@ -36,7 +41,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
                   .snapshots(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
                 if (snapshot.hasError) {
                   return Center(child: Text('Error: ${snapshot.error}'));
@@ -62,6 +67,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
+                        // Display date if it's a new date
                         if (isNewDate)
                           Center(
                             child: Padding(
@@ -70,19 +76,20 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
                               child: Text(
                                 DateFormat.yMMMd()
                                     .format(messageDate ?? DateTime.now()),
-                                style:
-                                    TextStyle(fontSize: 12, color: Colors.grey),
+                                style: const TextStyle(
+                                    fontSize: 12, color: Colors.grey),
                               ),
                             ),
                           ),
+                        // Display message
                         Align(
                           alignment: isCurrentUser
                               ? Alignment.centerRight
                               : Alignment.centerLeft,
                           child: Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 15),
-                            margin: EdgeInsets.symmetric(
+                            margin: const EdgeInsets.symmetric(
                                 vertical: 5, horizontal: 10),
                             decoration: BoxDecoration(
                               color: isCurrentUser
@@ -101,7 +108,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
                                         : Colors.black,
                                   ),
                                 ),
-                                SizedBox(height: 5),
+                                const SizedBox(height: 5),
                                 Text(
                                   DateFormat('h:mm a')
                                       .format(messageDate ?? DateTime.now()),
@@ -123,6 +130,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
               },
             ),
           ),
+          // Message input field and send button
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -138,7 +146,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
                     ),
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 IconButton(
                   icon: Icon(
                     Icons.send,
@@ -156,6 +164,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
     );
   }
 
+  // Generate a unique chat ID based on user IDs
   String _getChatId() {
     final currentUserId = currentUser?.uid ?? '';
     final chatUserId = widget.chatUserId;
@@ -166,6 +175,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
     }
   }
 
+  // Send a message and scroll to the bottom
   Future<void> _sendMessage() async {
     if (_messageController.text.trim().isEmpty) return;
 
@@ -185,11 +195,12 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
     _messageController.clear();
     _scrollController.animateTo(
       _scrollController.position.maxScrollExtent,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       curve: Curves.easeOut,
     );
   }
 
+  // Check if two dates are the same day
   bool isSameDay(DateTime? date1, DateTime? date2) {
     if (date1 == null || date2 == null) return false;
     return date1.year == date2.year &&
