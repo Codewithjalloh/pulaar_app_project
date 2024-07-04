@@ -11,7 +11,7 @@ class CustomDrawer extends StatelessWidget {
         children: [
           // Drawer header
           DrawerHeader(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [Colors.blueAccent, Colors.lightBlueAccent],
                 begin: Alignment.topLeft,
