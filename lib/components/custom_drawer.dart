@@ -116,7 +116,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/information');
             },
           ),
-          const Spacer(),
+          Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
             child: Text(
