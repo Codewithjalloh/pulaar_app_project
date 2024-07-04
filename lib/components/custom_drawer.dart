@@ -19,7 +19,7 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
             // added Pulaar
-            child: const Center(
+            child: Center(
               child: Text(
                 'Pulaar',
                 style: TextStyle(
